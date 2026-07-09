@@ -45,7 +45,7 @@ export default async function OpengraphImage() {
           </div>
           <div style={{ display: "flex", fontSize: 40, fontWeight: 700, color: "white" }}>
             <span style={{ color: "#6EE7B7" }}>Spark</span>
-            {" Solutions"}
+            <span style={{ marginLeft: 12 }}>Solutions</span>
           </div>
         </div>
 
