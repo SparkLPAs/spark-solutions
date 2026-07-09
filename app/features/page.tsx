@@ -3,6 +3,7 @@ import {
   Globe,
   Bot,
   ScrollText,
+  Layers,
   Scale,
   GraduationCap,
   Megaphone,
@@ -39,10 +40,17 @@ const features = [
   },
   {
     icon: ScrollText,
-    title: "Online Wills — Self-Service DIY",
+    title: "Online Wills — Self-Service Lead Generator",
     description:
-      "Give clients a self-service platform where they enter their details and instantly generate a simple will. Use it as a low-friction gateway into your fuller services — and run your own marketing campaigns on it at whatever pricing points you choose, keeping all the revenue.",
+      "A standalone, self-service DIY wills platform — free or priced however you choose. It's built to be the low-cost hook that pulls clients in, not the whole relationship: run multiple campaigns at multiple price points and keep all the revenue, then feed clients into your fuller services.",
     tone: "rose",
+  },
+  {
+    icon: Layers,
+    title: "SparkWills, SparkLPAs & SparkTrusts",
+    description:
+      "Three separate white-labelled DIY products, each fixed-price with revenue paid to you. Market them directly under their own branded sites, or offer them as an affordable option for clients who can't stretch to your full face-to-face service.",
+    tone: "navy",
   },
   {
     icon: Scale,
@@ -87,7 +95,7 @@ export default function FeaturesPage() {
       <PageHero
         eyebrow="Features"
         title="Everything You Need to Add Estate Planning to Your Financial Services Business"
-        subtitle="One plan, six modules, and a hub that tracks every lead, every pound of revenue, and the future value of every will you write."
+        subtitle="One plan, every module, and a hub that tracks every lead, every pound of revenue, and the future value of every will you write."
       />
 
       <section className="section">

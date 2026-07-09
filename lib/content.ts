@@ -55,9 +55,9 @@ export const modules: Module[] = [
   },
   {
     n: "3",
-    title: "Online Wills — self-service DIY documents",
+    title: "Online Wills — your self-service lead generator",
     description:
-      "Offer clients a self-service platform where they enter their details and instantly generate a simple will. Use it as a low-friction gateway into the rest of your estate planning services.",
+      "A standalone, self-service DIY wills platform — free or priced however you choose. Run multiple campaigns at multiple price points and keep all the revenue; it's the low-cost hook that pulls clients in, then feeds them into your fuller services.",
   },
   {
     n: "4",
