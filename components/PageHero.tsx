@@ -13,7 +13,7 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-primary-dark text-white">
-      <div className="pointer-events-none absolute inset-0 bg-grid-fade" />
+      <div className="pointer-events-none absolute inset-0 bg-hero-mesh" />
       <div className="relative mx-auto max-w-8xl px-6 py-20 sm:py-28">
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">
           {eyebrow}

@@ -9,9 +9,7 @@ export function Footer() {
       <div className="mx-auto max-w-8xl px-6 py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="[&_a]:text-white [&_span]:text-accent">
-              <Logo />
-            </div>
+            <Logo dark />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
               The white-label estate planning platform for financial services
               professionals. Wills, trusts and LPAs, under your own brand.

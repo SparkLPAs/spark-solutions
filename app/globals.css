@@ -33,7 +33,12 @@
   }
 
   .card {
-    @apply rounded-lg border border-border bg-surface p-6 shadow-[0_1px_2px_rgba(15,23,42,0.04)];
+    @apply rounded-lg border border-border bg-surface p-6 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_1px_1px_rgba(15,23,42,0.03)] transition-all duration-200;
+  }
+
+  a.card:hover,
+  .card-interactive:hover {
+    @apply -translate-y-0.5 border-primary/50 shadow-[0_12px_24px_-12px_rgba(29,78,216,0.18),0_2px_4px_rgba(15,23,42,0.04)];
   }
 
   .section {

@@ -26,43 +26,95 @@ export const metadata: Metadata = {
 };
 
 const hubIcons = [Users, TrendingUp, Landmark];
-const hubAccents = ["text-[#EC4899]", "text-[#10B981]", "text-primary"];
+const hubAccents = ["text-leads", "text-revenue", "text-probate"];
+const hubDots = ["bg-leads", "bg-revenue", "bg-probate"];
+const moduleTones = [
+  "bg-primary/10 text-primary",
+  "bg-primary-dark/10 text-primary-dark",
+  "bg-leads/10 text-leads",
+  "bg-accent/25 text-primary-dark",
+  "bg-revenue/10 text-revenue",
+  "bg-primary/10 text-primary",
+];
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary-dark text-white">
-        <div className="pointer-events-none absolute inset-0 bg-grid-fade" />
+        <div className="pointer-events-none absolute inset-0 bg-hero-mesh" />
         <div className="relative mx-auto max-w-8xl px-6 py-24 sm:py-32">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">
-              Estate Planning · SaaS for Financial Services
-            </p>
-            <h1 className="mt-5 font-heading text-4xl font-bold leading-[1.08] sm:text-6xl">
-              Power Your Estate Planning Business, All in One Platform
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
-              A white-labelled website, AI-assisted document generation, self-service
-              Online Wills, a regulated legal &amp; probate partner, training and
-              marketing — everything a will writer, estate planning consultant or
-              financial services professional needs to run the business, in one place.
-            </p>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
-              <Link href={site.signupUrl}>
-                <Button size="lg" className="bg-accent text-primary-dark hover:bg-accent/90">
-                  Start Free Trial
-                </Button>
-              </Link>
-              <Link href="/demo">
-                <Button size="lg" variant="outline">
-                  Book a Demo
-                </Button>
-              </Link>
+          <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">
+                Estate Planning · SaaS for Financial Services
+              </p>
+              <h1 className="mt-5 font-heading text-4xl font-bold leading-[1.08] sm:text-6xl">
+                Power Your Estate Planning Business, All in One Platform
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+                A white-labelled website, AI-assisted document generation, self-service
+                Online Wills, a regulated legal &amp; probate partner, training and
+                marketing — everything a will writer, estate planning consultant or
+                financial services professional needs to run the business, in one place.
+              </p>
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                <Link href={site.signupUrl}>
+                  <Button size="lg" className="bg-accent text-primary-dark hover:bg-accent/90">
+                    Start Free Trial
+                  </Button>
+                </Link>
+                <Link href="/demo">
+                  <Button size="lg" variant="outline">
+                    Book a Demo
+                  </Button>
+                </Link>
+              </div>
+              <p className="mt-4 text-sm text-white/50">
+                {pricing.trialDays} days free. No card required to start exploring.
+              </p>
             </div>
-            <p className="mt-4 text-sm text-white/50">
-              {pricing.trialDays} days free. No card required to start exploring.
-            </p>
+
+            <FadeIn delay={0.15}>
+              <div className="relative mx-auto w-full max-w-md">
+                <div className="absolute -inset-4 rounded-[1.75rem] bg-gradient-to-br from-accent/20 via-transparent to-leads/10 blur-2xl" />
+                <div className="relative rounded-xl border border-white/10 bg-white/[0.04] p-2 shadow-2xl backdrop-blur">
+                  <div className="rounded-lg bg-surface p-6">
+                    <div className="flex items-center justify-between">
+                      <p className="font-heading text-sm font-semibold text-ink">
+                        Your Estate Planning Hub
+                      </p>
+                      <span className="rounded-full bg-accent/20 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-primary-dark">
+                        Live
+                      </span>
+                    </div>
+                    <div className="mt-5 space-y-3">
+                      {hubStats.map((s, i) => {
+                        const Icon = hubIcons[i];
+                        return (
+                          <div
+                            key={s.label}
+                            className="flex items-center justify-between rounded-md border border-border bg-white px-4 py-3"
+                          >
+                            <div className="flex items-center gap-2.5">
+                              <span className={`h-1.5 w-1.5 rounded-full ${hubDots[i]}`} />
+                              <Icon className={`h-3.5 w-3.5 ${hubAccents[i]}`} />
+                              <span className="text-xs font-medium text-ink-muted">
+                                {s.label}
+                              </span>
+                            </div>
+                            <span className="font-mono text-sm font-semibold text-ink">
+                              {s.prefix}
+                              {s.value}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
           </div>
 
           <div className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-3 border-t border-white/10 pt-8 text-sm tracking-wide text-white/60">
@@ -231,10 +283,12 @@ export default function Home() {
           {modules.map((m, i) => (
             <FadeIn key={m.title} delay={(i % 2) * 0.1}>
               <div className="card h-full">
-                <span className="font-mono text-sm font-medium text-primary">
+                <span
+                  className={`inline-flex h-7 w-7 items-center justify-center rounded-md font-mono text-xs font-semibold ${moduleTones[i]}`}
+                >
                   {m.n.padStart(2, "0")}
                 </span>
-                <h3 className="mt-2 font-heading text-lg font-semibold text-ink">
+                <h3 className="mt-3 font-heading text-lg font-semibold text-ink">
                   {m.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-body">

@@ -35,6 +35,7 @@ const highlightFeatures = [
 ];
 
 const highlightIcons = [ScrollText, GraduationCap, Bot];
+const highlightTones = ["blue", "green", "rose"] as const;
 
 export default function WillWritersPage() {
   return (
@@ -135,7 +136,12 @@ export default function WillWritersPage() {
         <div className="mt-14 grid gap-6 sm:grid-cols-3">
           {highlightFeatures.map((f, i) => (
             <FadeIn key={f.title} delay={i * 0.1}>
-              <FeatureCard icon={highlightIcons[i]} title={f.title} description={f.description} />
+              <FeatureCard
+                icon={highlightIcons[i]}
+                title={f.title}
+                description={f.description}
+                tone={highlightTones[i]}
+              />
             </FadeIn>
           ))}
         </div>

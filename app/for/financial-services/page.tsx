@@ -36,6 +36,7 @@ const highlightFeatures = [
 ];
 
 const highlightIcons = [Layers, Bot, CreditCard];
+const highlightTones = ["blue", "navy", "green"] as const;
 
 export default function FinancialServicesPage() {
   return (
@@ -143,7 +144,12 @@ export default function FinancialServicesPage() {
         <div className="mt-14 grid gap-6 sm:grid-cols-3">
           {highlightFeatures.map((f, i) => (
             <FadeIn key={f.title} delay={i * 0.1}>
-              <FeatureCard icon={highlightIcons[i]} title={f.title} description={f.description} />
+              <FeatureCard
+                icon={highlightIcons[i]}
+                title={f.title}
+                description={f.description}
+                tone={highlightTones[i]}
+              />
             </FadeIn>
           ))}
         </div>
