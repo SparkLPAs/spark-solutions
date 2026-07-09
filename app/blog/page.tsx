@@ -25,13 +25,21 @@ export default function BlogPage() {
         subtitle="Practical guidance on adding estate planning revenue to your business, having the right conversations with clients, and getting the most from your Spark Solutions platform."
       />
       <section className="section">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, i) => (
-            <FadeIn key={post.slug} delay={(i % 3) * 0.1}>
-              <BlogCard post={post} />
-            </FadeIn>
-          ))}
-        </div>
+        {posts[0] && (
+          <FadeIn>
+            <BlogCard post={posts[0]} featured />
+          </FadeIn>
+        )}
+
+        {posts.length > 1 && (
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.slice(1).map((post, i) => (
+              <FadeIn key={post.slug} delay={(i % 3) * 0.1}>
+                <BlogCard post={post} />
+              </FadeIn>
+            ))}
+          </div>
+        )}
       </section>
     </>
   );

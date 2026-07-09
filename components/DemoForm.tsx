@@ -57,7 +57,15 @@ export function DemoForm() {
         </h3>
         <p className="max-w-md text-sm text-ink-body">
           We&apos;ve sent a confirmation to your email. In the meantime, feel free to
-          explore our pricing or partner models.
+          explore our{" "}
+          <a href="/pricing" className="font-semibold text-primary">
+            pricing
+          </a>{" "}
+          or{" "}
+          <a href="/features" className="font-semibold text-primary">
+            every module included
+          </a>
+          .
         </p>
       </div>
     );
