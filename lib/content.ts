@@ -1,5 +1,6 @@
 export const navLinks = [
   { href: "/how-it-works", label: "How It Works" },
+  { href: "/features", label: "Features" },
   { href: "/for/financial-services", label: "For FS Professionals" },
   { href: "/for/will-writers", label: "For Will Writers" },
   { href: "/pricing", label: "Pricing" },
@@ -9,7 +10,6 @@ export const navLinks = [
 export const footerLinks = {
   product: [
     { href: "/how-it-works", label: "How It Works" },
-    { href: "/partners", label: "Partner Models" },
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
   ],
@@ -33,160 +33,148 @@ export const sparkBrandFamily = [
   { name: "Spark-Works", url: "#" },
 ];
 
-export type PartnerModel = {
-  name: string;
-  summary: string;
-  bestFor: string;
-  bullets: string[];
-};
-
-export const partnerModels: PartnerModel[] = [
-  {
-    name: "White-Label Partner",
-    summary:
-      "Full rebrand under your own name and colours. Your clients never see Spark Solutions.",
-    bestFor: "Established FS businesses with their own brand to protect.",
-    bullets: [
-      "Your logo, colours and domain throughout",
-      "Client-facing emails sent from your brand",
-      "Your Stripe account, your revenue, direct",
-      "Full partner dashboard and reporting",
-    ],
-  },
-  {
-    name: "Branded Consultant",
-    summary:
-      "Operate as a Spark Solutions-branded estate planning consultant. Lower setup cost, faster to launch.",
-    bestFor: "Individuals adding estate planning to an existing client book.",
-    bullets: [
-      "Live in days, not weeks",
-      "Spark Solutions handles the platform branding",
-      "Your own Stripe account and revenue",
-      "Full document suite from day one",
-    ],
-  },
-  {
-    name: "Referrer / Introducer",
-    summary:
-      "Simply refer clients and earn commission per completed document. No setup required.",
-    bestFor: "FS firms not yet ready to operate a full estate planning service.",
-    bullets: [
-      "Zero setup, zero platform management",
-      "Commission paid per completed document",
-      "Share a single referral link",
-      "Upgrade to a full partner model any time",
-    ],
-  },
-];
-
-export type Feature = {
+export type Module = {
+  n: string;
   title: string;
   description: string;
 };
 
-export const coreFeatures: Feature[] = [
+// The six real modules that make up the platform.
+export const modules: Module[] = [
   {
-    title: "White-Label Ready",
+    n: "1",
+    title: "Your white-labelled estate planning website",
     description:
-      "Your logo, colours, domain and client emails — fully configurable, zero Spark Solutions branding for White-Label partners.",
+      "We design and launch a fully branded website for your business — your colours, your logo, compliant legal descriptions throughout. Every site is secured with HTTPS so lead contact information reaches you safely.",
   },
   {
-    title: "Stripe Connect",
+    n: "2",
+    title: "AI-assisted document generation",
     description:
-      "Partners connect their own Stripe account and receive client payments directly. No routing through us.",
+      "Industry-leading software for creating wills, Lasting Powers of Attorney and trusts, built for accuracy, compliance and ease of use — with an AI-powered assistant on hand to answer estate planning queries as you go.",
   },
   {
-    title: "Wills",
+    n: "3",
+    title: "Online Wills — self-service DIY documents",
     description:
-      "A fully guided online will-writing wizard, legally compliant for England & Wales.",
+      "Offer clients a self-service platform where they enter their details and instantly generate a simple will. Use it as a low-friction gateway into the rest of your estate planning services.",
   },
   {
-    title: "Trusts",
+    n: "4",
+    title: "A trusted legal & probate partner",
     description:
-      "Discretionary, protective and life interest trusts, built with the same guided wizard experience.",
+      "Executorship, probate, estate administration and trust-related services, delivered through our trusted legal partner. Every piece of work is reviewed and approved by a fully qualified, regulated solicitor.",
   },
   {
-    title: "LPAs",
+    n: "5",
+    title: "Estate planning training",
     description:
-      "Property & Financial Affairs and Health & Welfare Lasting Powers of Attorney, ready to register.",
+      "A professional learning platform with expert-developed courses, so you and your team can build real estate planning knowledge — no prior experience required.",
   },
   {
-    title: "Document Storage",
+    n: "6",
+    title: "A marketing module built for growth",
     description:
-      "Secure cloud storage for every completed document, with recurring subscription revenue built in.",
+      "Our marketing team helps grow your brand and get you noticed, with campaigns tailored to your goals — so the leads keep arriving while you focus on clients.",
   },
 ];
 
 export const homeSteps = [
   {
     n: "1",
-    title: "Sign up and connect Stripe",
-    body: "Create your account and connect your own Stripe account in minutes.",
+    title: "Start your free trial",
+    body: "Create your account and explore the full platform, free, for 14 days.",
   },
   {
     n: "2",
-    title: "Customise your brand",
-    body: "Add your logo, colours and domain — or launch under the Spark Solutions brand.",
+    title: "Launch your branded site",
+    body: "We launch your white-labelled estate planning website — your logo, your colours.",
   },
   {
     n: "3",
     title: "Start earning",
-    body: "Invite clients to create wills, trusts and LPAs, and get paid directly.",
+    body: "Generate documents, sell Online Wills and get paid directly via Stripe.",
   },
 ];
 
 export const trustBar = [
-  "100% White-Label",
-  "Stripe Connect",
-  "No Tech Setup",
-  "Legally Compliant",
+  "White-Labelled Website",
+  "AI-Assisted Documents",
+  "Regulated Legal Partner",
+  "Paid Directly via Stripe",
+];
+
+// Live counters shown in the "estate planning hub" dashboard preview.
+export const hubStats = [
+  {
+    label: "Leads",
+    value: "709",
+    prefix: "",
+    description: "Track all your customers and leads from every source, in one place.",
+  },
+  {
+    label: "Revenue",
+    value: "1,362.32",
+    prefix: "£",
+    description: "Get paid directly via Stripe when you sell wills through Online Wills.",
+  },
+  {
+    label: "Probate Bank",
+    value: "207,509.00",
+    prefix: "£",
+    description: "Track the future value of probate cases pipelined from wills you've written.",
+  },
 ];
 
 export const stats = [
   { value: "14+", label: "Years of estate planning expertise" },
-  { value: "3", label: "Ways to partner" },
-  { value: "£0", label: "Setup fee" },
+  { value: "6", label: "Modules, one platform" },
+  { value: "14", label: "Day free trial" },
 ];
 
 export const testimonials = [
   {
     quote: "[PARTNER QUOTE]",
     name: "[Partner Name]",
-    role: "[Business Type], White-Label Partner",
+    role: "[Business Type], Spark Solutions Partner",
   },
 ];
 
 export const pricingFeatures = [
-  "Full white-label platform under your brand",
-  "Unlimited wills, trusts and LPA documents",
-  "Your own Stripe Connect account — direct payouts",
-  "Partner dashboard with client and revenue reporting",
-  "Secure document storage for every client",
-  "Couple pricing logic built in",
-  "No per-transaction cut",
-  "Cancel anytime",
+  "White-labelled estate planning website",
+  "Industry-leading document generation software with AI assistant",
+  "White-labelled, customer self-service (DIY) Online Wills website",
+  "Legal & probate partner, reviewed by a regulated solicitor",
+  "Free document storage",
+  "Access to a pool of experienced estate planners (commission share)",
+  "Estate planning training module",
+  "Social media marketing module",
 ];
 
 export const faqs = [
   {
-    q: "Is there a setup fee?",
-    a: "No. Spark Solutions has no setup fee — you pay a single monthly platform fee and keep everything you earn from your clients.",
+    q: "Can I book a demonstration before joining the platform?",
+    a: "Yes. You can book a live demo at any time, or start your 14-day free trial straight away and explore the platform yourself — whichever you prefer.",
   },
   {
-    q: "How does Stripe Connect work?",
-    a: "You connect your own Stripe account during onboarding. Client payments go directly to you — Spark Solutions never touches your revenue.",
+    q: "I don't have any estate planning experience, can I still use this platform?",
+    a: "Yes. The platform is built for people without an estate planning background. The AI-powered assistant, guided document wizards and our estate planning training module are all there to bring you up to speed.",
   },
   {
-    q: "Can I cancel at any time?",
-    a: "Yes. There's no long-term contract. Cancel whenever you like from your partner dashboard.",
+    q: "What if I already have an estate planning website?",
+    a: "That's fine — you don't have to use the white-labelled website we launch for you. You can still access the document generation software, Online Wills, legal & probate partner and every other module on your existing site.",
   },
   {
-    q: "Which partner model is right for me?",
-    a: "White-Label suits established FS businesses that want full brand control. Branded Consultant suits individuals who want to launch fast. Referrer suits firms that just want to earn commission with no setup.",
+    q: "Is there a limit on how many documents I can write each month?",
+    a: "No. Your monthly platform fee includes unlimited use of the document generation software — there's no per-document or per-transaction charge.",
   },
   {
-    q: "Is the platform legally compliant?",
-    a: "Yes. Every will, trust and LPA created on Spark Solutions is built to be legally compliant for England & Wales.",
+    q: "Do I need to use your solicitors?",
+    a: "No. Our legal & probate partner is there whenever you need a regulated solicitor to review or handle probate, estate administration or trust work — but you're free to use your own where you already have a relationship.",
+  },
+  {
+    q: "Can I build and sell a Will Bank?",
+    a: "Yes. As clients complete wills through your platform, the future probate value attached to those wills builds your Probate Bank — a growing asset for your business that you can track from your dashboard.",
   },
 ];
 

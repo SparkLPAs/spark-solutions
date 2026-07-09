@@ -1,46 +1,47 @@
 import type { Metadata } from "next";
-import { CreditCard, Palette, TrendingUp } from "lucide-react";
+import { UserPlus, Palette, TrendingUp } from "lucide-react";
 
 import { PageHero } from "@/components/PageHero";
 import { FadeIn } from "@/components/FadeIn";
 import { CTABanner } from "@/components/CTABanner";
+import { pricing } from "@/lib/env";
 
 export const metadata: Metadata = {
   title: "How It Works — Launch Your Estate Planning Platform in Three Steps",
   description:
-    "See how Spark Solutions works: sign up and connect Stripe, customise your brand, and start earning estate planning revenue — usually live within days.",
+    "See how Spark Solutions works: start your free trial, launch your branded site and explore your modules, then connect Stripe and start earning — usually live within days.",
   alternates: { canonical: "/how-it-works" },
 };
 
 const steps = [
   {
     n: "1",
-    icon: CreditCard,
-    title: "Sign up and connect Stripe",
-    body: "Create your Spark Solutions account and choose your partner model — White-Label, Branded Consultant or Referrer. During onboarding you connect your own Stripe account, so client payments are set up to reach you directly from day one. There's no lengthy application process and no need to speak to a developer.",
+    icon: UserPlus,
+    title: "Start your free trial",
+    body: `Create your account and explore the full platform free for ${pricing.trialDays} days — the document suite, Online Wills, training and marketing module included. No card required to start, and you can cancel any time before the trial ends at no cost.`,
     mockup: {
-      label: "Stripe Connect",
-      rows: ["Account connected", "Payouts: Direct to you"],
+      label: "Create Account",
+      rows: ["Email verified", "Plan: Pro — all features"],
     },
   },
   {
     n: "2",
     icon: Palette,
-    title: "Customise your brand",
-    body: "Upload your logo, set your colours and connect your own domain, or launch straight away under the Spark Solutions brand as a Branded Consultant. Every client-facing email, page and document reflects your chosen setup, so clients experience a platform that feels like a natural extension of your existing business.",
+    title: "Launch your branded website",
+    body: "We launch a fully branded estate planning website for your business — your logo, your colours, compliant legal descriptions throughout, secured with HTTPS. Explore the Will Suite, Online Wills and training module while your site goes live.",
     mockup: {
-      label: "Brand Settings",
-      rows: ["Logo · Colours · Domain", "Client emails: Your brand"],
+      label: "Estate Planning Website",
+      rows: ["Logo · Colours · Domain", "Status: Live"],
     },
   },
   {
     n: "3",
     icon: TrendingUp,
-    title: "Start earning",
-    body: "Invite clients into their own guided portal to create wills, trusts and LPAs — at a mortgage review, a protection conversation or an annual check-in. They complete their documents online at their own pace, payments land directly in your Stripe account, and every document is stored securely for as long as they need it.",
+    title: "Connect Stripe and start earning",
+    body: "Connect your own Stripe account so client payments land directly with you, then invite clients into their guided portal to create wills, trusts and LPAs. Watch your Leads, Revenue and Probate Bank grow from your dashboard as every document completes.",
     mockup: {
-      label: "Partner Dashboard",
-      rows: ["Clients invited: Live", "Revenue: Paid direct"],
+      label: "Your Estate Planning Hub",
+      rows: ["Leads: Growing", "Revenue: Paid direct"],
     },
   },
 ];

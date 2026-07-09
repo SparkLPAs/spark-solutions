@@ -38,12 +38,15 @@ export default function TermsPage() {
             regulations relevant to their own business.
           </p>
 
-          <h2>Fees</h2>
+          <h2>Fees, term and cancellation</h2>
           <p>
             Partners pay a monthly platform fee as set out on our{" "}
-            <a href="/pricing">pricing page</a>. Fees are billed in advance and are
-            non-refundable except as required by law. Partners may cancel at any
-            time; access continues until the end of the current billing period.
+            <a href="/pricing">pricing page</a>, billed in advance from the date
+            access is first granted. Your 14-day free trial can be cancelled at any
+            time before it ends at no cost. If you continue past the trial, your
+            subscription commits you to a minimum initial term of 3 months, after
+            which it renews monthly and can be cancelled with at least 30 days&apos;
+            notice. Fees are non-refundable except as required by law.
           </p>
 
           <h2>Payments</h2>

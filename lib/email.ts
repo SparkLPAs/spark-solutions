@@ -41,7 +41,7 @@ export async function sendDemoRequestEmails(data: DemoRequestInput) {
         1 business day to arrange a time that suits you.</p>
         <p>In the meantime, feel free to explore
         <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://spark-solutions.co.uk"}/pricing">our pricing</a>
-        or <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://spark-solutions.co.uk"}/partners">partner models</a>.</p>
+        or <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://spark-solutions.co.uk"}/features">everything included</a>.</p>
         <p>Speak soon,<br />The Spark Solutions team</p>
       `,
     }),

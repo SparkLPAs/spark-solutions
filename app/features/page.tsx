@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import {
+  Globe,
+  Bot,
   ScrollText,
-  Landmark,
-  ShieldCheck,
-  FolderLock,
+  Scale,
+  GraduationCap,
+  Megaphone,
   LayoutDashboard,
-  Palette,
   CreditCard,
-  Users,
 } from "lucide-react";
 
 import { PageHero } from "@/components/PageHero";
@@ -18,58 +18,58 @@ import { CTABanner } from "@/components/CTABanner";
 export const metadata: Metadata = {
   title: "Features — Everything You Need to Add Estate Planning to Your Business",
   description:
-    "Every feature you need to add estate planning to your financial services business: wills, trusts, LPAs, document storage, white-label theming, Stripe Connect, a partner dashboard and couple pricing.",
+    "Every module included with Spark Solutions: a white-labelled website, AI-assisted document generation, Online Wills, a legal & probate partner, training, marketing, an estate planning hub and direct Stripe payments.",
   alternates: { canonical: "/features" },
 };
 
 const features = [
   {
+    icon: Globe,
+    title: "White-Labelled Estate Planning Website",
+    description:
+      "We design and launch a fully branded website for your business — your logo, your colours, compliant legal descriptions throughout. Every site is secured with HTTPS, so lead contact information reaches you safely from day one.",
+  },
+  {
+    icon: Bot,
+    title: "AI-Assisted Document Generation",
+    description:
+      "The Will Suite: industry-leading software for creating wills, discretionary, protective and life interest trusts, and Property & Financial Affairs / Health & Welfare LPAs — built for accuracy, compliance and ease of use, with an AI-powered assistant on hand to answer estate planning queries as you go.",
+  },
+  {
     icon: ScrollText,
-    title: "Online Will Creation Wizard",
+    title: "Online Wills — Self-Service DIY",
     description:
-      "A guided, step-by-step wizard walks clients through creating a legally compliant will for England & Wales — no legal jargon, no blank pages. Clients complete it at their own pace, from any device, and every will is structured to meet current legal requirements before it's finalised.",
+      "Give clients a self-service platform where they enter their details and instantly generate a simple will. Use it as a low-friction gateway into your fuller services — and run your own marketing campaigns on it at whatever pricing points you choose, keeping all the revenue.",
   },
   {
-    icon: Landmark,
-    title: "Trust Creation",
+    icon: Scale,
+    title: "A Trusted Legal & Probate Partner",
     description:
-      "Clients can set up discretionary, protective or life interest trusts through the same guided experience used for wills. Each trust type is built around real scenarios — protecting assets for children, a vulnerable beneficiary or a surviving spouse — rather than generic legal templates.",
+      "Executorship, probate, estate administration and trust-related services, delivered through our trusted legal partner. Every piece of work is reviewed and approved by a fully qualified, regulated solicitor — plus a legal support line for complex questions.",
   },
   {
-    icon: ShieldCheck,
-    title: "LPA Creation",
+    icon: GraduationCap,
+    title: "Estate Planning Training",
     description:
-      "Property & Financial Affairs and Health & Welfare Lasting Powers of Attorney are created online and prepared ready for registration. Clients choose their attorneys, set preferences and instructions, and receive documents structured to meet Office of the Public Guardian requirements.",
+      "A professional learning platform with expert-developed courses and online training videos for wills and LPAs — so you and your team can build real estate planning knowledge, no prior experience required.",
   },
   {
-    icon: FolderLock,
-    title: "Document Storage",
+    icon: Megaphone,
+    title: "Marketing Module",
     description:
-      "Every completed will, trust and LPA is stored securely in the cloud, accessible to the client whenever they need it. This also gives partners a natural recurring subscription revenue stream, layered on top of the one-off document fee.",
+      "Our marketing team helps grow your brand and get you noticed, with campaigns tailored to your goals. Manage campaigns directly from your dashboard, so the leads keep arriving while you focus on clients.",
   },
   {
     icon: LayoutDashboard,
-    title: "Partner Dashboard",
+    title: "Your Estate Planning Hub",
     description:
-      "Manage every client, track document status and see your revenue in one place. The dashboard shows who's started, who's completed and who needs a nudge — so following up is quick instead of guesswork.",
-  },
-  {
-    icon: Palette,
-    title: "White-Label Theming",
-    description:
-      "Your logo, brand colours, domain and every client-facing email are fully configurable. White-Label partners can run the platform entirely under their own name, with no visible reference to Spark Solutions anywhere in the client journey.",
+      "One dashboard for the whole business: track every customer and lead from every source, watch your revenue grow, and see your Probate Bank — the future value of probate cases pipelined from wills you've written — build over time.",
   },
   {
     icon: CreditCard,
-    title: "Stripe Connect",
+    title: "Get Paid Directly via Stripe",
     description:
-      "Partners connect their own Stripe account during onboarding, so client payments go straight to them. Spark Solutions never sits between you and your revenue, and there's no per-transaction cut on top of your platform fee.",
-  },
-  {
-    icon: Users,
-    title: "Couple Pricing Logic",
-    description:
-      "When two clients complete their documents together — a common scenario for spouses and partners — the platform automatically applies discounted couple pricing, making it easier to convert both members of a household in one go.",
+      "Connect your own Stripe account during setup and get paid directly when you sell wills through Online Wills or any other service. Spark Solutions never sits between you and your revenue.",
   },
 ];
 
@@ -79,7 +79,7 @@ export default function FeaturesPage() {
       <PageHero
         eyebrow="Features"
         title="Everything You Need to Add Estate Planning to Your Financial Services Business"
-        subtitle="From guided document creation to white-label branding and direct payments — every feature is built to make estate planning a natural, revenue-generating extension of your existing business."
+        subtitle="One plan, six modules, and a hub that tracks every lead, every pound of revenue, and the future value of every will you write."
       />
 
       <section className="section">

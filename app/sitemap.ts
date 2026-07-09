@@ -8,7 +8,6 @@ const staticRoutes = [
   "/for/financial-services",
   "/for/will-writers",
   "/how-it-works",
-  "/partners",
   "/pricing",
   "/features",
   "/about",

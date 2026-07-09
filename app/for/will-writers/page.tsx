@@ -1,26 +1,40 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ScrollText, Landmark, ShieldCheck } from "lucide-react";
+import { ScrollText, GraduationCap, Bot } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
 import { FadeIn } from "@/components/FadeIn";
 import { FeatureCard } from "@/components/FeatureCard";
 import { CTABanner } from "@/components/CTABanner";
-import { coreFeatures, partnerModels } from "@/lib/content";
+import { site } from "@/lib/env";
 
 export const metadata: Metadata = {
   title: "Will Writing Platform White Label for Will Writers & Estate Planners",
   description:
-    "A white-label will writing platform for freelance will writers and small estate planning practices. Modern, guided will writing software for wills, trusts and LPAs — launch under your own brand in days.",
+    "A white-label will writing platform for freelance will writers and small estate planning practices. AI-assisted document generation for wills, trusts and LPAs — launch under your own brand in days.",
   alternates: { canonical: "/for/will-writers" },
 };
 
-const highlightFeatures = coreFeatures.filter((f) =>
-  ["Wills", "Trusts", "LPAs"].includes(f.title)
-);
+const highlightFeatures = [
+  {
+    title: "AI-Assisted Document Suite",
+    description:
+      "Wills, trusts and LPAs generated through a structured, legally compliant wizard — with an AI assistant on hand for estate planning queries.",
+  },
+  {
+    title: "Estate Planning Training",
+    description:
+      "No prior estate planning experience? Our training module and online courses bring you up to speed fast.",
+  },
+  {
+    title: "Online Wills, Self-Service",
+    description:
+      "Offer a self-service DIY will option too — a low-friction way for clients to start, and a gateway into your fuller services.",
+  },
+];
 
-const highlightIcons = [ScrollText, Landmark, ShieldCheck];
+const highlightIcons = [ScrollText, GraduationCap, Bot];
 
 export default function WillWritersPage() {
   return (
@@ -31,14 +45,14 @@ export default function WillWritersPage() {
         subtitle="Launch a guided, legally compliant will writing platform under your own brand — without building or maintaining any of the technology yourself."
       >
         <div className="mt-9 flex flex-wrap items-center gap-4">
-          <Link href="/demo">
+          <Link href={site.signupUrl}>
             <Button size="lg" className="bg-accent text-primary-dark hover:bg-accent/90">
-              Book a Free Demo
+              Start Free Trial
             </Button>
           </Link>
-          <Link href="/pricing">
+          <Link href="/demo">
             <Button size="lg" variant="outline">
-              See Pricing
+              Book a Demo
             </Button>
           </Link>
         </div>
@@ -95,8 +109,8 @@ export default function WillWritersPage() {
                 body: "Clients complete wills, trusts and LPAs through a structured online wizard — reducing errors, saving you admin time and giving them a far better experience than paper forms.",
               },
               {
-                title: "Low-cost ways to start",
-                body: "Whether you want your own branded platform or a fast, low-cost way to launch, the Branded Consultant and Referrer models let you start earning without a large upfront investment.",
+                title: "A regulated legal partner behind you",
+                body: "For probate, estate administration or trust work beyond your remit, our legal & probate partner steps in — every piece of work reviewed by a regulated solicitor.",
               },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.1}>
@@ -127,31 +141,22 @@ export default function WillWritersPage() {
         </div>
       </section>
 
-      {/* Partner model callout */}
+      {/* What's included callout */}
       <section className="border-y border-border bg-surface">
         <div className="section">
           <FadeIn>
-            <p className="eyebrow text-center">Fast, Low-Cost Ways To Launch</p>
+            <p className="eyebrow text-center">One Plan, Everything Included</p>
             <h2 className="mt-3 text-center font-heading text-3xl font-bold text-ink sm:text-4xl">
-              Branded Consultant or Referrer — your choice
+              Everything you need, from day one
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-ink-body">
+              Your branded website, the full document suite, Online Wills, the legal &amp;
+              probate partner, training and marketing — one plan, no tiers to work out.
+            </p>
           </FadeIn>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2">
-            {[partnerModels[1], partnerModels[2]].map((model, i) => (
-              <FadeIn key={model.name} delay={i * 0.1}>
-                <div className="card h-full">
-                  <h3 className="font-heading text-xl font-semibold text-ink">{model.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-body">{model.summary}</p>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink-muted">
-                    Best for: <span className="font-normal normal-case">{model.bestFor}</span>
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
           <FadeIn delay={0.2} className="mt-10 text-center">
-            <Link href="/partners" className="text-sm font-semibold text-primary">
-              Compare all three partner models →
+            <Link href="/pricing" className="text-sm font-semibold text-primary">
+              See the full pricing breakdown →
             </Link>
           </FadeIn>
         </div>

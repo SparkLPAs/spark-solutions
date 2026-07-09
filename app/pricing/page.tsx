@@ -40,7 +40,7 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="Estate Planning SaaS UK Pricing: One Simple Platform Fee"
-        subtitle="No setup fee, no per-transaction cut and no long-term contract. Just a single monthly platform fee, whichever partner model you choose."
+        subtitle={`No setup fee and no per-transaction cut — just a single monthly platform fee, with a ${pricing.trialDays}-day free trial to try everything first.`}
       />
 
       <section className="section">
@@ -78,7 +78,10 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <CTABanner title="No setup fee. Cancel anytime. No per-transaction cut." />
+      <CTABanner
+        title="No setup fee. No per-transaction cut."
+        subtitle={`Try everything free for ${pricing.trialDays} days. Cancel any time before your trial ends.`}
+      />
     </>
   );
 }

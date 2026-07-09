@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/content";
+import { site } from "@/lib/env";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -29,11 +30,11 @@ export function Nav() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link href="/login" className="btn-ghost h-11 px-5 text-sm">
+          <Link href={site.loginUrl} className="btn-ghost h-11 px-5 text-sm">
             Login
           </Link>
-          <Link href="/demo">
-            <Button>Book a Demo</Button>
+          <Link href={site.signupUrl}>
+            <Button>Start Free Trial</Button>
           </Link>
         </div>
 
@@ -60,11 +61,11 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/login" className="text-base font-medium text-ink-body">
+            <Link href={site.loginUrl} className="text-base font-medium text-ink-body">
               Login
             </Link>
-            <Link href="/demo" onClick={() => setOpen(false)}>
-              <Button className="w-full">Book a Demo</Button>
+            <Link href={site.signupUrl} onClick={() => setOpen(false)}>
+              <Button className="w-full">Start Free Trial</Button>
             </Link>
           </nav>
         </div>

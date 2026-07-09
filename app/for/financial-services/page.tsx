@@ -1,13 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CreditCard, Layers, FolderLock } from "lucide-react";
+import { CreditCard, Layers, Bot } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
 import { FadeIn } from "@/components/FadeIn";
 import { FeatureCard } from "@/components/FeatureCard";
 import { CTABanner } from "@/components/CTABanner";
-import { coreFeatures, partnerModels, businessTypeLabels } from "@/lib/content";
+import { businessTypeLabels } from "@/lib/content";
+import { site } from "@/lib/env";
 
 export const metadata: Metadata = {
   title: "Estate Planning Software for Financial Advisers & Mortgage Brokers",
@@ -16,11 +17,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "/for/financial-services" },
 };
 
-const highlightFeatures = coreFeatures.filter((f) =>
-  ["Stripe Connect", "White-Label Ready", "Document Storage"].includes(f.title)
-);
+const highlightFeatures = [
+  {
+    title: "White-Labelled Website",
+    description:
+      "We launch a fully branded estate planning website for your business — your logo, your colours, secured with HTTPS.",
+  },
+  {
+    title: "AI-Assisted Documents",
+    description:
+      "Industry-leading document generation software for wills, trusts and LPAs, with an AI assistant on hand for estate planning queries.",
+  },
+  {
+    title: "Paid Directly via Stripe",
+    description:
+      "Your revenue is paid to you directly via Stripe — Spark Solutions charges a single platform fee, nothing more.",
+  },
+];
 
-const highlightIcons = [CreditCard, Layers, FolderLock];
+const highlightIcons = [Layers, Bot, CreditCard];
 
 export default function FinancialServicesPage() {
   return (
@@ -31,14 +46,14 @@ export default function FinancialServicesPage() {
         subtitle="Add a fully branded estate planning platform to your existing client relationships — wills, trusts and LPAs, connected to your own Stripe account, live in days."
       >
         <div className="mt-9 flex flex-wrap items-center gap-4">
-          <Link href="/demo">
+          <Link href={site.signupUrl}>
             <Button size="lg" className="bg-accent text-primary-dark hover:bg-accent/90">
-              Book a Free Demo
+              Start Free Trial
             </Button>
           </Link>
-          <Link href="/pricing">
+          <Link href="/demo">
             <Button size="lg" variant="outline">
-              See Pricing
+              Book a Demo
             </Button>
           </Link>
         </div>
@@ -134,31 +149,23 @@ export default function FinancialServicesPage() {
         </div>
       </section>
 
-      {/* Partner model callout */}
+      {/* What's included callout */}
       <section className="border-y border-border bg-surface">
         <div className="section">
           <FadeIn>
-            <p className="eyebrow text-center">Choose Your Level of Involvement</p>
+            <p className="eyebrow text-center">One Plan, Everything Included</p>
             <h2 className="mt-3 text-center font-heading text-3xl font-bold text-ink sm:text-4xl">
-              From full white-label to a simple referral
+              No tiers to navigate, no add-ons to negotiate
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-ink-body">
+              Every partner gets the full platform — the branded website, the document
+              suite, Online Wills, the legal &amp; probate partner, training and
+              marketing — for a single monthly fee.
+            </p>
           </FadeIn>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2">
-            {[partnerModels[0], partnerModels[2]].map((model, i) => (
-              <FadeIn key={model.name} delay={i * 0.1}>
-                <div className="card h-full">
-                  <h3 className="font-heading text-xl font-semibold text-ink">{model.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-body">{model.summary}</p>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink-muted">
-                    Best for: <span className="font-normal normal-case">{model.bestFor}</span>
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
           <FadeIn delay={0.2} className="mt-10 text-center">
-            <Link href="/partners" className="text-sm font-semibold text-primary">
-              Compare all three partner models →
+            <Link href="/pricing" className="text-sm font-semibold text-primary">
+              See the full pricing breakdown →
             </Link>
           </FadeIn>
         </div>
