@@ -21,7 +21,7 @@ export function CTABanner({
   return (
     <section className="bg-primary-dark text-white">
       <div className="mx-auto max-w-4xl px-6 py-20 text-center sm:py-24">
-        <h2 className="font-heading text-3xl font-bold sm:text-4xl">{title}</h2>
+        <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">{title}</h2>
         <p className="mx-auto mt-4 max-w-xl text-white/70">
           {subtitle ?? `${pricing.trialDays} days free. Cancel any time before your trial ends.`}
         </p>

@@ -49,7 +49,7 @@ export default function Home() {
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">
                 Estate Planning · SaaS for Financial Services
               </p>
-              <h1 className="mt-5 font-heading text-4xl font-bold leading-[1.08] sm:text-6xl">
+              <h1 className="mt-5 font-heading text-4xl font-bold leading-[1.08] text-white sm:text-6xl">
                 Power Your Estate Planning Business, All in One Platform
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
