@@ -53,7 +53,7 @@ export function DemoForm() {
       <div className="card flex flex-col items-center gap-4 py-12 text-center">
         <CheckCircle2 className="h-12 w-12 text-accent" />
         <h3 className="font-heading text-2xl font-semibold text-ink">
-          Thanks — Jason will be in touch within 1 business day
+          Thanks — we&apos;ll be in touch within 1 business day
         </h3>
         <p className="max-w-md text-sm text-ink-body">
           We&apos;ve sent a confirmation to your email. In the meantime, feel free to

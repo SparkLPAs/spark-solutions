@@ -17,7 +17,7 @@ const expectations = [
     icon: MessageCircle,
     title: "A conversation, not a pitch",
     description:
-      "Tell us about your business and Jason will tailor the walkthrough to how you'd actually use the platform.",
+      "Tell us about your business and we'll tailor the walkthrough to how you'd actually use the platform.",
   },
   {
     icon: Calendar,
@@ -37,7 +37,7 @@ export default function DemoPage() {
       <PageHero
         eyebrow="Book a Demo"
         title="See Spark Solutions in Action"
-        subtitle="Tell us a little about your business and Jason will walk you through the platform — no obligation, no pressure."
+        subtitle="Tell us a little about your business and we'll walk you through the platform — no obligation, no pressure."
       />
       <section className="section">
         <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">

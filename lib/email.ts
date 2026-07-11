@@ -13,7 +13,7 @@ const fromAddress = () =>
 
 export async function sendDemoRequestEmails(data: DemoRequestInput) {
   const resend = getResend();
-  const notifyTo = process.env.DEMO_NOTIFICATION_EMAIL || "jason@yourdomain.com";
+  const notifyTo = process.env.DEMO_NOTIFICATION_EMAIL || "hello@spark-solutions.co.uk";
 
   await Promise.all([
     resend.emails.send({
@@ -37,7 +37,7 @@ export async function sendDemoRequestEmails(data: DemoRequestInput) {
       subject: "Thanks for your interest in Spark Solutions",
       html: `
         <p>Hi ${data.fullName.split(" ")[0]},</p>
-        <p>Thanks for requesting a demo of Spark Solutions. Jason will be in touch within
+        <p>Thanks for requesting a demo of Spark Solutions. The team will be in touch within
         1 business day to arrange a time that suits you.</p>
         <p>In the meantime, feel free to explore
         <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://spark-solutions.co.uk"}/pricing">our pricing</a>
