@@ -6,9 +6,9 @@ import { CTABanner } from "@/components/CTABanner";
 import { sparkBrandFamily, stats } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About — 14+ Years of Estate Planning Expertise",
+  title: "About — 16+ Years of Estate Planning Expertise",
   description:
-    "Spark Solutions was built on 14+ years of estate planning expertise. Formerly Osiris Solutions, Spark Solutions is now part of a wider brand family including SparkWills, SparkTrusts, SparkLPAs, SparkMade and Spark-Works.",
+    "Spark Solutions was built on 16+ years of estate planning expertise, including senior leadership at England and Wales' largest estate planning company. Formerly Osiris Solutions, Spark Solutions is now part of a wider brand family including SparkWills, SparkTrusts, SparkLPAs, SparkMade and Spark-Works.",
   alternates: { canonical: "/about" },
 };
 
@@ -17,7 +17,7 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About Spark Solutions"
-        title="Built on 14+ Years of Estate Planning Expertise"
+        title="Built on 16+ Years of Estate Planning Expertise"
         subtitle="Spark Solutions exists to make it simple for financial services professionals and will writers to offer their clients wills, trusts and LPAs — without building the technology themselves."
       />
 
@@ -45,17 +45,20 @@ export default function AboutPage() {
               Jason
             </h2>
             <p className="mt-5 leading-relaxed text-ink-body">
-              Jason has spent more than 14 years working in estate planning, helping
-              individuals and families put wills, trusts and LPAs in place — and helping
-              financial services professionals understand why estate planning belongs
-              alongside the advice they already give. That experience is the foundation
-              Spark Solutions is built on.
+              Jason has spent 16 years in estate planning, starting out as part of the
+              founding team behind what would go on to become the largest estate planning
+              company in England and Wales. As a senior member of that leadership team, he
+              was a major contributor to its growth — helping take the business from a
+              start-up to the biggest name in the sector, and shaping how estate planning
+              is delivered at scale for individuals, families and the professionals who
+              serve them.
             </p>
             <p className="mt-4 leading-relaxed text-ink-body">
-              Rather than build another estate planning practice, Jason built the platform
-              he wished existed: one that lets financial services professionals and will
-              writers offer estate planning under their own brand, connected to their own
-              Stripe account, without needing to write a single line of code.
+              Spark Solutions is built on that experience. Rather than start another
+              estate planning practice, Jason built the platform he wished had existed at
+              scale: one that lets financial services professionals and will writers offer
+              estate planning under their own brand, connected to their own Stripe
+              account, without needing to write a single line of code.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-6">
               {stats.map((s) => (

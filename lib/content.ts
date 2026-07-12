@@ -127,7 +127,7 @@ export const hubStats = [
 ];
 
 export const stats = [
-  { value: "14+", label: "Years of estate planning expertise" },
+  { value: "16+", label: "Years of estate planning expertise" },
   { value: "6", label: "Modules, one platform" },
   { value: "14", label: "Day free trial" },
 ];
