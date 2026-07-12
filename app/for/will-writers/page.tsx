@@ -7,7 +7,6 @@ import { PageHero } from "@/components/PageHero";
 import { FadeIn } from "@/components/FadeIn";
 import { FeatureCard } from "@/components/FeatureCard";
 import { CTABanner } from "@/components/CTABanner";
-import { site } from "@/lib/env";
 
 export const metadata: Metadata = {
   title: "Will Writing Platform White Label for Will Writers & Estate Planners",
@@ -46,7 +45,7 @@ export default function WillWritersPage() {
         subtitle="Launch a guided, legally compliant will writing platform under your own brand — without building or maintaining any of the technology yourself."
       >
         <div className="mt-9 flex flex-wrap items-center gap-4">
-          <Link href={site.signupUrl}>
+          <Link href="/start-trial">
             <Button size="lg" className="bg-accent text-primary-dark hover:bg-accent/90">
               Start Free Trial
             </Button>

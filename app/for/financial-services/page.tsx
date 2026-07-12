@@ -8,7 +8,6 @@ import { FadeIn } from "@/components/FadeIn";
 import { FeatureCard } from "@/components/FeatureCard";
 import { CTABanner } from "@/components/CTABanner";
 import { businessTypeLabels } from "@/lib/content";
-import { site } from "@/lib/env";
 
 export const metadata: Metadata = {
   title: "Estate Planning Software for Financial Advisers & Mortgage Brokers",
@@ -47,7 +46,7 @@ export default function FinancialServicesPage() {
         subtitle="Add a fully branded estate planning platform to your existing client relationships — wills, trusts and LPAs, connected to your own Stripe account, live in days."
       >
         <div className="mt-9 flex flex-wrap items-center gap-4">
-          <Link href={site.signupUrl}>
+          <Link href="/start-trial">
             <Button size="lg" className="bg-accent text-primary-dark hover:bg-accent/90">
               Start Free Trial
             </Button>

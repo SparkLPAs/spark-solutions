@@ -106,9 +106,14 @@ export default function AboutPage() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {sparkBrandFamily.map((brand, i) => (
             <FadeIn key={brand.name} delay={(i % 5) * 0.06}>
-              <div className="card h-full text-center">
+              <a
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card block h-full text-center transition hover:border-primary/40 hover:shadow-md"
+              >
                 <p className="font-heading text-base font-semibold text-ink">{brand.name}</p>
-              </div>
+              </a>
             </FadeIn>
           ))}
         </div>

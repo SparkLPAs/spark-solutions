@@ -13,3 +13,12 @@ export function trackDemoRequestSubmitted() {
 
   window.fbq?.("track", "Lead");
 }
+
+export function trackTrialRequestSubmitted() {
+  if (typeof window === "undefined") return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: "trial_request_submitted" });
+
+  window.fbq?.("track", "Lead");
+}

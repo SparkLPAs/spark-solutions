@@ -28,3 +28,12 @@ export const demoRequestSchema = z.object({
 });
 
 export type DemoRequestInput = z.infer<typeof demoRequestSchema>;
+
+export const trialRequestSchema = z.object({
+  fullName: z.string().trim().min(2, "Enter your full name"),
+  companyName: z.string().trim().min(2, "Enter your company name"),
+  email: z.string().trim().email("Enter a valid email address"),
+  phone: z.string().trim().min(7, "Enter a valid phone number"),
+});
+
+export type TrialRequestInput = z.infer<typeof trialRequestSchema>;

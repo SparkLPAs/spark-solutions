@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-import type { DemoRequestInput } from "@/lib/validations";
+import type { DemoRequestInput, TrialRequestInput } from "@/lib/validations";
 
 function getResend() {
   const apiKey = process.env.RESEND_API_KEY;
@@ -39,6 +39,41 @@ export async function sendDemoRequestEmails(data: DemoRequestInput) {
         <p>Hi ${data.fullName.split(" ")[0]},</p>
         <p>Thanks for requesting a demo of Spark Solutions. The team will be in touch within
         1 business day to arrange a time that suits you.</p>
+        <p>In the meantime, feel free to explore
+        <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://spark-solutions.co.uk"}/pricing">our pricing</a>
+        or <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://spark-solutions.co.uk"}/features">everything included</a>.</p>
+        <p>Speak soon,<br />The Spark Solutions team</p>
+      `,
+    }),
+  ]);
+}
+
+export async function sendTrialRequestEmails(data: TrialRequestInput) {
+  const resend = getResend();
+  const notifyTo = process.env.DEMO_NOTIFICATION_EMAIL || "hello@spark-solutions.co.uk";
+
+  await Promise.all([
+    resend.emails.send({
+      from: fromAddress(),
+      to: notifyTo,
+      replyTo: data.email,
+      subject: `New trial request — ${data.companyName}`,
+      html: `
+        <h2>New free trial request</h2>
+        <p><strong>Name:</strong> ${data.fullName}</p>
+        <p><strong>Company:</strong> ${data.companyName}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Phone:</strong> ${data.phone}</p>
+      `,
+    }),
+    resend.emails.send({
+      from: fromAddress(),
+      to: data.email,
+      subject: "Your Spark Solutions free trial",
+      html: `
+        <p>Hi ${data.fullName.split(" ")[0]},</p>
+        <p>Thanks for your interest in Spark Solutions. The team will be in touch within
+        1 business day to get your free trial set up.</p>
         <p>In the meantime, feel free to explore
         <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://spark-solutions.co.uk"}/pricing">our pricing</a>
         or <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://spark-solutions.co.uk"}/features">everything included</a>.</p>

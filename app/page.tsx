@@ -16,7 +16,7 @@ import {
   testimonials,
   trustBar,
 } from "@/lib/content";
-import { pricing, site } from "@/lib/env";
+import { pricing } from "@/lib/env";
 
 export const metadata: Metadata = {
   title: "White-Label Estate Planning Platform for Financial Services",
@@ -59,7 +59,7 @@ export default function Home() {
                 financial services professional needs to run the business, in one place.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Link href={site.signupUrl}>
+                <Link href="/start-trial">
                   <Button size="lg" className="bg-accent text-primary-dark hover:bg-accent/90">
                     Start Free Trial
                   </Button>

@@ -26,11 +26,11 @@ export const footerLinks = {
 };
 
 export const sparkBrandFamily = [
-  { name: "SparkWills", url: "#" },
-  { name: "SparkTrusts", url: "#" },
-  { name: "SparkLPAs", url: "#" },
-  { name: "SparkMade", url: "#" },
-  { name: "Spark-Works", url: "#" },
+  { name: "SparkWills", url: "https://www.sparkwills.co.uk" },
+  { name: "SparkTrusts", url: "https://www.sparktrusts.co.uk" },
+  { name: "SparkLPAs", url: "https://www.sparklpas.co.uk" },
+  { name: "SparkMade", url: "https://www.sparkmade.co.uk" },
+  { name: "Spark-Works", url: "https://www.spark-works.co.uk" },
 ];
 
 export type Module = {

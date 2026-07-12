@@ -1,13 +1,11 @@
 export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   name: process.env.NEXT_PUBLIC_SITE_NAME || "Spark Solutions",
-  // Partner login and trial signup live on the existing platform backend, not
-  // in this app. "Start Free Trial" creates a real account and triggers
-  // backend provisioning of a white-labelled site — it is NOT the /demo
-  // lead-capture form. Point these at the real URLs once the Spark-branded
-  // backend exists.
+  // Partner login lives on the existing platform backend, not in this app.
+  // Point this at the real URL once the Spark-branded backend exists.
+  // "Start Free Trial" is a lead-capture form (/start-trial), not a real
+  // signup -- see components/TrialForm.tsx.
   loginUrl: process.env.NEXT_PUBLIC_LOGIN_URL || "#",
-  signupUrl: process.env.NEXT_PUBLIC_SIGNUP_URL || "#",
 };
 
 export const pricing = {

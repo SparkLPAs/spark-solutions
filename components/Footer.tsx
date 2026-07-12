@@ -54,8 +54,8 @@ export function Footer() {
               ))}
             </ul>
             <p className="mt-6 text-sm text-white/70">
-              <a href="mailto:jason@yourdomain.com" className="hover:text-white">
-                jason@yourdomain.com
+              <a href="mailto:hello@spark-solutions.co.uk" className="hover:text-white">
+                hello@spark-solutions.co.uk
               </a>
             </p>
           </div>
@@ -66,7 +66,7 @@ export function Footer() {
             Part of the Spark brand family:{" "}
             {sparkBrandFamily.map((b, i) => (
               <span key={b.name}>
-                <a href={b.url} className="text-white/80 hover:text-white">
+                <a href={b.url} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white">
                   {b.name}
                 </a>
                 {i < sparkBrandFamily.length - 1 ? " · " : ""}
