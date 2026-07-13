@@ -55,10 +55,11 @@ export default function AboutPage() {
             </p>
             <p className="mt-4 leading-relaxed text-ink-body">
               Spark Solutions is built on that experience. Rather than start another
-              estate planning practice, Jason built the platform he wished had existed at
-              scale: one that lets financial services professionals and will writers offer
-              estate planning under their own brand, connected to their own Stripe
-              account, without needing to write a single line of code.
+              estate planning practice, Jason built the platform that pulls together
+              everything you need into one place: letting financial services
+              professionals and will writers offer estate planning under their own brand,
+              connected to their own Stripe account, without needing to write a single
+              line of code.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-6">
               {stats.map((s) => (
