@@ -21,8 +21,8 @@ const expectations = [
   },
   {
     icon: CreditCard,
-    title: "No card required to start",
-    description: "Cancel any time before your trial ends at no cost.",
+    title: "Card required to start",
+    description: "First charge on day 15 — cancel any time before then at no cost.",
   },
   {
     icon: ShieldCheck,
