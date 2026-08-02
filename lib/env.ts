@@ -3,8 +3,9 @@ export const site = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "Spark Solutions",
   // The Spark-branded backend now exists and is live (app.spark-solutions.co.uk,
   // the partner dashboard) — pointing these at its real Clerk sign-in/sign-up
-  // routes instead of the "#" placeholder and the local /start-trial
-  // lead-capture form (components/TrialForm.tsx) these used to point to.
+  // routes. /start-trial used to be a local lead-capture form
+  // (components/TrialForm.tsx, now removed) — every CTA points here
+  // instead, and /start-trial itself redirects here too (next.config.mjs).
   loginUrl: process.env.NEXT_PUBLIC_LOGIN_URL || "https://app.spark-solutions.co.uk/sign-in",
   signupUrl: process.env.NEXT_PUBLIC_SIGNUP_URL || "https://app.spark-solutions.co.uk/sign-up",
 };

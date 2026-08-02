@@ -1,4 +1,4 @@
-import type { DemoRequestInput, TrialRequestInput } from "@/lib/validations";
+import type { DemoRequestInput } from "@/lib/validations";
 
 type CrmResult = { ok: boolean; error?: string };
 
@@ -48,16 +48,5 @@ export function submitDemoToCrm(data: DemoRequestInput): Promise<CrmResult> {
     ]
       .filter(Boolean)
       .join("\n"),
-  });
-}
-
-export function submitTrialToCrm(data: TrialRequestInput): Promise<CrmResult> {
-  return postLead({
-    name: data.fullName,
-    company: data.companyName,
-    email: data.email,
-    phone: data.phone,
-    source: "Spark Solutions trial signup",
-    message: "Requested via the Start Free Trial form.",
   });
 }
