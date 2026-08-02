@@ -33,9 +33,9 @@ export function Nav() {
           <Link href={site.loginUrl} className="btn-ghost h-11 px-5 text-sm">
             Login
           </Link>
-          <Link href="/start-trial">
+          <a href={site.signupUrl}>
             <Button>Start Free Trial</Button>
-          </Link>
+          </a>
         </div>
 
         <button
@@ -64,9 +64,9 @@ export function Nav() {
             <Link href={site.loginUrl} className="text-base font-medium text-ink-body">
               Login
             </Link>
-            <Link href="/start-trial" onClick={() => setOpen(false)}>
+            <a href={site.signupUrl} onClick={() => setOpen(false)}>
               <Button className="w-full">Start Free Trial</Button>
-            </Link>
+            </a>
           </nav>
         </div>
       )}

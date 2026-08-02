@@ -1,13 +1,13 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { pricing } from "@/lib/env";
+import { pricing, site } from "@/lib/env";
 
 export function CTABanner({
   title,
   subtitle,
   ctaLabel = "Start Free Trial",
-  ctaHref = "/start-trial",
+  ctaHref = site.signupUrl,
   secondaryLabel = "Book a Demo",
   secondaryHref = "/demo",
 }: {

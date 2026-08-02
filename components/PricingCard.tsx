@@ -2,13 +2,13 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { formatPrice, pricing } from "@/lib/env";
+import { formatPrice, pricing, site } from "@/lib/env";
 
 export function PricingCard({
   price,
   setupFee,
   features,
-  ctaHref = "/start-trial",
+  ctaHref = site.signupUrl,
   ctaLabel = "Start Free Trial",
   secondaryHref = "/demo",
   secondaryLabel = "Book a Demo",
