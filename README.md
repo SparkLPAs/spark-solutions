@@ -69,12 +69,15 @@ lib/                    env.ts (site + pricing config), content.ts (shared
 The `/reviews` page pulls from `content/reviews/*.mdx`. It starts empty and
 shows an honest "check back soon" message until real reviews are added — do
 not add placeholder/fabricated reviews to make the page look populated.
+Publishing one is a normal PR to this repo, so nothing goes live without
+being reviewed and merged — that's the approval step.
 
 To add a real one, create a new file `content/reviews/<slug>.mdx`:
 
 ```mdx
 ---
 authorName: "Jane Smith"
+businessName: "XYZ Solutions"
 role: "Independent Financial Adviser"
 rating: 5
 date: "2026-08-10"
@@ -87,8 +90,11 @@ multiple paragraphs of Markdown.
 Field notes:
 
 - `authorName` — required.
-- `role` — required. The partner's business/title (e.g. "Will Writer, Smith
-  & Co"), not used for anything beyond display.
+- `businessName` — required. The review is attributed as "Jane Smith at
+  XYZ Solutions" on the site — get sign-off from the reviewer to be named
+  alongside their business before publishing.
+- `role` — optional job title, shown alongside the date (e.g. "Independent
+  Financial Adviser · August 2026"). Omit if not given.
 - `rating` — optional, 1–5. Omit entirely if no star rating was given.
 - `date` — required, `YYYY-MM-DD`. Reviews are sorted newest-first.
 - The MDX body below the frontmatter is the review text itself.

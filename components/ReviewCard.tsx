@@ -30,9 +30,12 @@ export function ReviewCard({ review }: { review: Review }) {
       <div className="mt-4 text-sm leading-relaxed text-ink-body [&_p]:mt-3 [&_p:first-child]:mt-0">
         <Body />
       </div>
-      <p className="mt-5 text-sm font-semibold text-ink">{review.authorName}</p>
+      <p className="mt-5 text-sm font-semibold text-ink">
+        {review.authorName} at {review.businessName}
+      </p>
       <p className="text-xs text-ink-muted">
-        {review.role} · {formatDate(review.date)}
+        {review.role ? `${review.role} · ` : ""}
+        {formatDate(review.date)}
       </p>
     </div>
   );
