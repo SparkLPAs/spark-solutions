@@ -37,6 +37,12 @@ export function CTABanner({
             </Button>
           </Link>
         </div>
+        <p className="mt-6 text-sm text-white/60">
+          Prefer to pay now instead?{" "}
+          <Link href={site.skipTrialUrl} className="underline underline-offset-2 hover:text-white">
+            Skip the trial
+          </Link>
+        </p>
       </div>
     </section>
   );
