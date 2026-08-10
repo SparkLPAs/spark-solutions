@@ -8,6 +8,12 @@ export const site = {
   // instead, and /start-trial itself redirects here too (next.config.mjs).
   loginUrl: process.env.NEXT_PUBLIC_LOGIN_URL || "https://app.spark-solutions.co.uk/sign-in",
   signupUrl: process.env.NEXT_PUBLIC_SIGNUP_URL || "https://app.spark-solutions.co.uk/sign-up",
+  // A partner who'd rather pay immediately than wait out the trial — this
+  // hits the dashboard's own /skip-trial route first (sets a cookie the
+  // Billing page reads once they eventually get there), then continues on
+  // to the same real sign-up flow as signupUrl above. Not a different
+  // sign-up process, just a different intent carried into it.
+  skipTrialUrl: process.env.NEXT_PUBLIC_SKIP_TRIAL_URL || "https://app.spark-solutions.co.uk/skip-trial",
 };
 
 export const pricing = {

@@ -58,6 +58,12 @@ export function PricingCard({
         Cancel any time before your {pricing.trialDays}-day trial ends — completely free, no
         questions asked.
       </p>
+      <p className="mt-4 text-center text-xs text-ink-muted">
+        Prefer to pay now instead?{" "}
+        <Link href={site.skipTrialUrl} className="underline underline-offset-2 hover:text-ink">
+          Skip the trial
+        </Link>
+      </p>
     </div>
   );
 }
