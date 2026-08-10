@@ -10,7 +10,7 @@ Contentlayer.
 - **Framework:** Next.js 14 (App Router), TypeScript
 - **Styling:** Tailwind CSS + shadcn/ui-style primitives
 - **Animation:** Framer Motion (scroll-triggered fade-ins)
-- **Content:** Contentlayer2 + MDX for the blog
+- **Content:** Contentlayer2 + MDX for the blog and reviews
 - **Forms:** React Hook Form + Zod
 - **Email:** Resend (demo request notifications + auto-reply)
 - **Analytics:** GTM, GA4 (via GTM), Meta Pixel, Microsoft Clarity
@@ -50,16 +50,48 @@ app/                    Route segments (App Router)
   demo/                 Demo request page + form
   api/demo/route.ts     Resend email handler for demo requests
   blog/                 Blog index + [slug] detail page (Contentlayer)
+  reviews/page.tsx      Reviews page (Contentlayer)
   legal/privacy, legal/terms
   sitemap.ts, robots.ts
 components/             Nav, Footer, Hero, FeatureCard, PricingCard,
-                        TestimonialCard, CTABanner, BlogCard, DemoForm,
-                        analytics/*, ui/* (shadcn-style primitives)
+                        TestimonialCard, CTABanner, BlogCard, ReviewCard,
+                        DemoForm, analytics/*, ui/* (shadcn-style primitives)
 content/blog/*.mdx      5 seed blog articles
+content/reviews/*.mdx   Real partner reviews — empty until real ones are
+                        added; see "Adding a real review" below.
 lib/                    env.ts (site + pricing config), content.ts (shared
                         copy), validations.ts (Zod schemas), email.ts
                         (Resend), utils.ts, analytics-events.ts
 ```
+
+## Adding a real review
+
+The `/reviews` page pulls from `content/reviews/*.mdx`. It starts empty and
+shows an honest "check back soon" message until real reviews are added — do
+not add placeholder/fabricated reviews to make the page look populated.
+
+To add a real one, create a new file `content/reviews/<slug>.mdx`:
+
+```mdx
+---
+authorName: "Jane Smith"
+role: "Independent Financial Adviser"
+rating: 5
+date: "2026-08-10"
+---
+
+The review text goes here, written in the partner's own words. Can span
+multiple paragraphs of Markdown.
+```
+
+Field notes:
+
+- `authorName` — required.
+- `role` — required. The partner's business/title (e.g. "Will Writer, Smith
+  & Co"), not used for anything beyond display.
+- `rating` — optional, 1–5. Omit entirely if no star rating was given.
+- `date` — required, `YYYY-MM-DD`. Reviews are sorted newest-first.
+- The MDX body below the frontmatter is the review text itself.
 
 ## Design system
 

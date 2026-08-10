@@ -4,6 +4,7 @@ export const navLinks = [
   { href: "/for/financial-services", label: "For FS Professionals" },
   { href: "/for/will-writers", label: "For Will Writers" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -12,6 +13,7 @@ export const footerLinks = {
     { href: "/how-it-works", label: "How It Works" },
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
+    { href: "/reviews", label: "Reviews" },
   ],
   audience: [
     { href: "/for/financial-services", label: "For FS Professionals" },
