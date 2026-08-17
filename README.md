@@ -122,8 +122,11 @@ stubbed with placeholders pending confirmation:
   update if a different Spark subdomain is chosen.
 - **Partner testimonials** — `lib/content.ts` uses a `[PARTNER QUOTE]`
   placeholder until real quotes are supplied.
-- **Pricing** — defaults to £325/month via `NEXT_PUBLIC_MONTHLY_PRICE`;
-  confirm the final figure (£300, £315 or £325).
+- **Pricing** — £285/month via `NEXT_PUBLIC_MONTHLY_PRICE` (dropped from
+  £325, Aug 2026) — this is now the live, confirmed figure, not a
+  placeholder; changing it again just means updating the env var (no
+  code deploy needed) and creating a matching Stripe Price in the
+  spark-partner-dashboard repo.
 - **About page photo** — `/about` uses an abstract illustration in place of
   a headshot until one is supplied.
 - **Migrated content** — no content was carried over from the previous
