@@ -17,7 +17,7 @@ export const site = {
 };
 
 export const pricing = {
-  monthly: Number(process.env.NEXT_PUBLIC_MONTHLY_PRICE ?? 325),
+  monthly: Number(process.env.NEXT_PUBLIC_MONTHLY_PRICE ?? 285),
   setupFee: Number(process.env.NEXT_PUBLIC_SETUP_FEE ?? 0),
   trialDays: Number(process.env.NEXT_PUBLIC_TRIAL_DAYS ?? 14),
 };
