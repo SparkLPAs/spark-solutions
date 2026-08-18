@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2 } from "lucide-react";
@@ -21,6 +21,11 @@ import { trackDemoRequestSubmitted } from "@/lib/analytics-events";
 export function DemoForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  // Spam signals only — not part of DemoRequestInput/demoRequestSchema, so
+  // they're read directly from refs rather than react-hook-form. See
+  // lib/spam-check.ts for how the server uses these.
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const renderedAtRef = useRef(Date.now());
 
   const {
     register,
@@ -36,7 +41,11 @@ export function DemoForm() {
       const res = await fetch("/api/demo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          honeypot: honeypotRef.current?.value ?? "",
+          renderedAt: renderedAtRef.current,
+        }),
       });
 
       if (!res.ok) throw new Error("Request failed");
@@ -73,6 +82,22 @@ export function DemoForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="card space-y-5" noValidate>
+      {/* Honeypot — invisible to real visitors, off-screen rather than
+          display:none so it still exists in the DOM for bots that check
+          computed visibility. See lib/spam-check.ts. */}
+      <div className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
+        <label htmlFor="website">Leave this field blank</label>
+        <input
+          ref={honeypotRef}
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-1.5">
           <Label htmlFor="fullName">Full name</Label>
