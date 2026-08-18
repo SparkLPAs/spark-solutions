@@ -3,7 +3,6 @@ import {
   Globe,
   Bot,
   ScrollText,
-  Layers,
   Scale,
   GraduationCap,
   Megaphone,
@@ -44,13 +43,6 @@ const features = [
     description:
       "A standalone, self-service DIY wills platform — free or priced however you choose. It's built to be the low-cost hook that pulls clients in, not the whole relationship: run multiple campaigns at multiple price points and keep all the revenue, then feed clients into your fuller services.",
     tone: "rose",
-  },
-  {
-    icon: Layers,
-    title: "SparkWills, SparkLPAs & SparkTrusts",
-    description:
-      "Three separate white-labelled DIY products, each fixed-price with revenue paid to you. Market them directly under their own branded sites, or offer them as an affordable option for clients who can't stretch to your full face-to-face service.",
-    tone: "navy",
   },
   {
     icon: Scale,

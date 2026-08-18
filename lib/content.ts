@@ -27,10 +27,11 @@ export const footerLinks = {
   ],
 };
 
+// SparkWills, SparkTrusts and SparkLPAs deliberately excluded (business
+// owner, Aug 2026): they're not part of the Spark Solutions offering right
+// now and no reference to them should appear on this site — may fold them
+// back in later, but not a decision this file should make unilaterally.
 export const sparkBrandFamily = [
-  { name: "SparkWills", url: "https://www.sparkwills.co.uk" },
-  { name: "SparkTrusts", url: "https://www.sparktrusts.co.uk" },
-  { name: "SparkLPAs", url: "https://www.sparklpas.co.uk" },
   { name: "SparkMade", url: "https://www.sparkmade.co.uk" },
   { name: "Spark-Works", url: "https://www.spark-works.co.uk" },
 ];

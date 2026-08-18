@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { FadeIn } from "@/components/FadeIn";
 import { CTABanner } from "@/components/CTABanner";
-import { sparkBrandFamily, stats } from "@/lib/content";
+import { stats } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About — 16+ Years of Estate Planning Expertise",
   description:
-    "Spark Solutions was built on 16+ years of estate planning expertise, including senior leadership at England and Wales' largest estate planning company. Formerly Osiris Solutions, Spark Solutions is now part of a wider brand family including SparkWills, SparkTrusts, SparkLPAs, SparkMade and Spark-Works.",
+    "Spark Solutions was built on 16+ years of estate planning expertise, including senior leadership at England and Wales' largest estate planning company. Formerly Osiris Solutions, Spark Solutions is the white-label estate planning platform for financial services professionals and will writers.",
   alternates: { canonical: "/about" },
 };
 
@@ -92,34 +92,6 @@ export default function AboutPage() {
               the professionals who offer it and the clients who rely on it.
             </p>
           </FadeIn>
-        </div>
-      </section>
-
-      {/* Brand family */}
-      <section className="section">
-        <FadeIn>
-          <p className="eyebrow text-center">The Spark Family</p>
-          <h2 className="mt-3 text-center font-heading text-3xl font-bold text-ink sm:text-4xl">
-            Part of a wider family of estate planning products
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-center leading-relaxed text-ink-body">
-            Spark Solutions is the partner platform at the centre of a growing family of
-            products, each focused on a specific part of the estate planning journey.
-          </p>
-        </FadeIn>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {sparkBrandFamily.map((brand, i) => (
-            <FadeIn key={brand.name} delay={(i % 5) * 0.06}>
-              <a
-                href={brand.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card block h-full text-center transition hover:border-primary/40 hover:shadow-md"
-              >
-                <p className="font-heading text-base font-semibold text-ink">{brand.name}</p>
-              </a>
-            </FadeIn>
-          ))}
         </div>
       </section>
 
