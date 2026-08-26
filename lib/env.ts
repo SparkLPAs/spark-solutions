@@ -17,7 +17,14 @@ export const site = {
 };
 
 export const pricing = {
-  monthly: Number(process.env.NEXT_PUBLIC_MONTHLY_PRICE ?? 285),
+  // The public site stays single-priced (confirmed design: the WillSuite-
+  // vs-SparkLegal engine choice happens post-signup, in account setup, not
+  // as a public two-tier comparison) — so this is the FROM price, the
+  // cheaper SparkLegal entry point, not a flat number. The actual monthly
+  // fee a partner pays depends on which engine they choose during setup
+  // (from £150 to £285/month) — see PricingCard's "from" framing.
+  monthly: Number(process.env.NEXT_PUBLIC_MONTHLY_PRICE ?? 150),
+  monthlyMax: Number(process.env.NEXT_PUBLIC_MONTHLY_PRICE_MAX ?? 285),
   setupFee: Number(process.env.NEXT_PUBLIC_SETUP_FEE ?? 0),
   trialDays: Number(process.env.NEXT_PUBLIC_TRIAL_DAYS ?? 14),
 };

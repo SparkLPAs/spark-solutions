@@ -20,7 +20,7 @@ const moduleLabels = [
 
 export const metadata: Metadata = {
   title: "Pricing — Estate Planning SaaS UK, One Simple Platform Fee",
-  description: `Transparent pricing for Spark Solutions, the estate planning SaaS UK financial services professionals and will writers trust. ${formatPrice(
+  description: `Transparent pricing for Spark Solutions, the estate planning SaaS UK financial services professionals and will writers trust. From ${formatPrice(
     pricing.monthly
   )}/month, no setup fee, no per-transaction cut.`,
   alternates: { canonical: "/pricing" },
@@ -50,7 +50,9 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="Estate Planning SaaS UK Pricing: One Simple Platform Fee"
-        subtitle={`No setup fee and no per-transaction cut — just a single monthly platform fee, with a ${pricing.trialDays}-day free trial to try everything first.`}
+        subtitle={`No setup fee and no per-transaction cut — just a single monthly platform fee from ${formatPrice(
+          pricing.monthly
+        )}, with a ${pricing.trialDays}-day free trial to try everything first.`}
       />
 
       <section className="relative overflow-hidden">
@@ -59,6 +61,7 @@ export default function PricingPage() {
           <FadeIn>
             <PricingCard
               price={pricing.monthly}
+              priceMax={pricing.monthlyMax}
               setupFee={pricing.setupFee}
               features={pricingFeatures}
             />
