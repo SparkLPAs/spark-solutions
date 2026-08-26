@@ -28,7 +28,7 @@ const steps = [
     n: "2",
     icon: Palette,
     title: "Launch your branded website",
-    body: "We launch a fully branded estate planning website for your business — your logo, your colours, compliant legal descriptions throughout, secured with HTTPS. Explore the Will Suite, Online Wills and training module while your site goes live.",
+    body: "We launch a fully branded estate planning website for your business — your logo, your colours, compliant legal descriptions throughout, secured with HTTPS. Explore the document suite, Online Wills and training module while your site goes live.",
     mockup: {
       label: "Estate Planning Website",
       rows: ["Logo · Colours · Domain", "Status: Live"],

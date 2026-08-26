@@ -34,7 +34,7 @@ const features = [
     icon: Bot,
     title: "AI-Assisted Document Generation",
     description:
-      "The Will Suite: industry-leading software for creating wills, discretionary, protective and life interest trusts, and Property & Financial Affairs / Health & Welfare LPAs — built for accuracy, compliance and ease of use, with an AI-powered assistant on hand to answer estate planning queries as you go.",
+      "Industry-leading software for creating wills, discretionary, protective and life interest trusts, and Property & Financial Affairs / Health & Welfare LPAs — built for accuracy, compliance and ease of use, with an AI-powered assistant on hand to answer estate planning queries as you go.",
     tone: "navy",
   },
   {
