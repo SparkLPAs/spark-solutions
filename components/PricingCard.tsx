@@ -6,6 +6,7 @@ import { formatPrice, pricing, site } from "@/lib/env";
 
 export function PricingCard({
   price,
+  priceMax,
   setupFee,
   features,
   ctaHref = site.signupUrl,
@@ -14,6 +15,7 @@ export function PricingCard({
   secondaryLabel = "Book a Demo",
 }: {
   price: number;
+  priceMax?: number;
   setupFee: number;
   features: string[];
   ctaHref?: string;
@@ -26,7 +28,7 @@ export function PricingCard({
       <p className="eyebrow">Pro plan · everything included</p>
       <p className="mt-3 flex items-baseline gap-2">
         <span className="font-mono text-5xl font-medium text-ink">
-          {formatPrice(price)}
+          From {formatPrice(price)}
         </span>
         <span className="text-sm text-ink-muted">/ month</span>
       </p>
@@ -34,6 +36,12 @@ export function PricingCard({
         {pricing.trialDays}-day free trial ·{" "}
         {setupFee === 0 ? "no setup fee" : `${formatPrice(setupFee)} setup fee`}
       </p>
+      {priceMax && priceMax > price && (
+        <p className="mt-2 text-xs text-ink-muted">
+          Your exact monthly fee ({formatPrice(price)}–{formatPrice(priceMax)}) depends on the
+          document engine you choose during account setup.
+        </p>
+      )}
 
       <ul className="mt-8 space-y-3">
         {features.map((f) => (

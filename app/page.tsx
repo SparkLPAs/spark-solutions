@@ -315,12 +315,14 @@ export default function Home() {
               Everything you need, in one plan
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-ink-body">
-              One powerful plan with everything included — no tiers, no compromises.
+              One powerful plan with everything included — no per-transaction cut, no
+              compromises.
             </p>
           </FadeIn>
           <FadeIn delay={0.1} className="mt-14">
             <PricingCard
               price={pricing.monthly}
+              priceMax={pricing.monthlyMax}
               setupFee={pricing.setupFee}
               features={pricingFeatures}
             />
