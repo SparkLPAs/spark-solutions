@@ -34,7 +34,7 @@ const features = [
     icon: Bot,
     title: "AI-Assisted Document Generation",
     description:
-      "Industry-leading software for creating wills, discretionary, protective and life interest trusts, and Property & Financial Affairs / Health & Welfare LPAs — built for accuracy, compliance and ease of use, with an AI-powered assistant on hand to answer estate planning queries as you go.",
+      "Industry-leading software for creating wills, discretionary, protective and life interest trusts, and Property & Financial Affairs / Health & Welfare LPAs — built for accuracy, compliance and ease of use, with an AI-powered assistant available on our higher-tier document engine.",
     tone: "navy",
   },
   {
@@ -87,7 +87,7 @@ export default function FeaturesPage() {
       <PageHero
         eyebrow="Features"
         title="Everything You Need to Add Estate Planning to Your Financial Services Business"
-        subtitle="One plan, every module, and a hub that tracks every lead, every pound of revenue, and the future value of every will you write."
+        subtitle="Every module, and a hub that tracks every lead, every pound of revenue, and the future value of every will you write."
       />
 
       <section className="section">

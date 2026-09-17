@@ -25,7 +25,7 @@ export function PricingCard({
 }) {
   return (
     <div className="mx-auto max-w-md rounded-lg border border-border bg-white p-8 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
-      <p className="eyebrow">Pro plan · everything included</p>
+      <p className="eyebrow">Every module included</p>
       <p className="mt-3 flex items-baseline gap-2">
         <span className="font-mono text-5xl font-medium text-ink">
           From {formatPrice(price)}

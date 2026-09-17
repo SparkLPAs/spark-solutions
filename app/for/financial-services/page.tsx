@@ -26,7 +26,7 @@ const highlightFeatures = [
   {
     title: "AI-Assisted Documents",
     description:
-      "Industry-leading document generation software for wills, trusts and LPAs, with an AI assistant on hand for estate planning queries.",
+      "Industry-leading document generation software for wills, trusts and LPAs, with an AI assistant available on our higher-tier engine.",
   },
   {
     title: "Paid Directly via Stripe",
@@ -159,9 +159,9 @@ export default function FinancialServicesPage() {
       <section className="border-y border-border bg-surface">
         <div className="section">
           <FadeIn>
-            <p className="eyebrow text-center">One Plan, Everything Included</p>
+            <p className="eyebrow text-center">Everything Included</p>
             <h2 className="mt-3 text-center font-heading text-3xl font-bold text-ink sm:text-4xl">
-              No tiers to navigate, no add-ons to negotiate
+              No add-ons to negotiate
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-ink-body">
               Every partner gets the full platform — the branded website, the document

@@ -20,7 +20,7 @@ const highlightFeatures = [
   {
     title: "AI-Assisted Document Suite",
     description:
-      "Wills, trusts and LPAs generated through a structured, legally compliant wizard — with an AI assistant on hand for estate planning queries.",
+      "Wills, trusts and LPAs generated through a structured, legally compliant wizard — with an AI assistant available on our higher-tier engine.",
   },
   {
     title: "Estate Planning Training",
@@ -151,13 +151,13 @@ export default function WillWritersPage() {
       <section className="border-y border-border bg-surface">
         <div className="section">
           <FadeIn>
-            <p className="eyebrow text-center">One Plan, Everything Included</p>
+            <p className="eyebrow text-center">Everything Included</p>
             <h2 className="mt-3 text-center font-heading text-3xl font-bold text-ink sm:text-4xl">
               Everything you need, from day one
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-ink-body">
               Your branded website, the full document suite, Online Wills, the legal &amp;
-              probate partner, training and marketing — one plan, no tiers to work out.
+              probate partner, training and marketing, for a single monthly fee.
             </p>
           </FadeIn>
           <FadeIn delay={0.2} className="mt-10 text-center">

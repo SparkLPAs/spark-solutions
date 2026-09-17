@@ -312,11 +312,10 @@ export default function Home() {
           <FadeIn>
             <p className="eyebrow text-center">Pricing</p>
             <h2 className="mt-3 text-center font-heading text-3xl font-bold text-ink sm:text-4xl">
-              Everything you need, in one plan
+              Everything you need, one flat fee
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-ink-body">
-              One powerful plan with everything included — no per-transaction cut, no
-              compromises.
+              Every module included — no per-transaction cut, no compromises.
             </p>
           </FadeIn>
           <FadeIn delay={0.1} className="mt-14">
