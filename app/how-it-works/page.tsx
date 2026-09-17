@@ -21,7 +21,7 @@ const steps = [
     body: `Create your account and explore the full platform free for ${pricing.trialDays} days — the document suite, Online Wills, training and marketing module included. A card is required to start; you're only charged if you don't cancel before the trial ends.`,
     mockup: {
       label: "Create Account",
-      rows: ["Email verified", "Plan: Pro — all features"],
+      rows: ["Email verified", "Account active"],
     },
   },
   {

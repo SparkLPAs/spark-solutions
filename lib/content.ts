@@ -54,7 +54,7 @@ export const modules: Module[] = [
     n: "2",
     title: "AI-assisted document generation",
     description:
-      "Industry-leading software for creating wills, Lasting Powers of Attorney and trusts, built for accuracy, compliance and ease of use — with an AI-powered assistant on hand to answer estate planning queries as you go.",
+      "Industry-leading software for creating wills, Lasting Powers of Attorney and trusts, built for accuracy, compliance and ease of use — with an AI-powered assistant available on our higher-tier document engine.",
   },
   {
     n: "3",
@@ -145,7 +145,7 @@ export const testimonials = [
 
 export const pricingFeatures = [
   "White-labelled estate planning website",
-  "Industry-leading document generation software with AI assistant",
+  "Industry-leading document generation software, with AI-assisted drafting on our higher-tier engine",
   "White-labelled, customer self-service (DIY) Online Wills website",
   "Legal & probate partner, reviewed by a regulated solicitor",
   "Free document storage",
@@ -161,7 +161,7 @@ export const faqs = [
   },
   {
     q: "I don't have any estate planning experience, can I still use this platform?",
-    a: "Yes. The platform is built for people without an estate planning background. The AI-powered assistant, guided document wizards and our estate planning training module are all there to bring you up to speed.",
+    a: "Yes. The platform is built for people without an estate planning background. Guided document wizards and our estate planning training module bring you up to speed, and our higher-tier document engine adds an AI-powered assistant on top.",
   },
   {
     q: "What if I already have an estate planning website?",
