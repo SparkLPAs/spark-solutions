@@ -57,13 +57,13 @@ export default function PrivacyPage() {
             Under UK data protection law, you have the right to access, correct or
             delete the personal data we hold about you. To exercise these rights,
             contact us at{" "}
-            <a href="mailto:jason@yourdomain.com">jason@yourdomain.com</a>.
+            <a href="mailto:hello@spark-solutions.co.uk">hello@spark-solutions.co.uk</a>.
           </p>
 
           <h2>Contact</h2>
           <p>
             If you have questions about this policy, contact us at{" "}
-            <a href="mailto:jason@yourdomain.com">jason@yourdomain.com</a>.
+            <a href="mailto:hello@spark-solutions.co.uk">hello@spark-solutions.co.uk</a>.
           </p>
         </div>
       </section>

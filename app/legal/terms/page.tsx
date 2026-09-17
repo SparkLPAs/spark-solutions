@@ -80,7 +80,7 @@ export default function TermsPage() {
           <h2>Contact</h2>
           <p>
             Questions about these terms can be sent to{" "}
-            <a href="mailto:jason@yourdomain.com">jason@yourdomain.com</a>.
+            <a href="mailto:hello@spark-solutions.co.uk">hello@spark-solutions.co.uk</a>.
           </p>
         </div>
       </section>
