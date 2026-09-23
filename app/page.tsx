@@ -71,7 +71,7 @@ export default function Home() {
                 </Link>
               </div>
               <p className="mt-4 text-sm text-white/50">
-                {pricing.trialDays} days free, full access. Card required to start — first charge on day
+                {pricing.trialDays} days free, full access. Payment method required to start — first charge on day
                 {pricing.trialDays + 1}, cancel any time before then.
               </p>
             </div>
