@@ -135,13 +135,6 @@ export const stats = [
   { value: "14", label: "Day free trial" },
 ];
 
-export const testimonials = [
-  {
-    quote: "[PARTNER QUOTE]",
-    name: "[Partner Name]",
-    role: "[Business Type], Spark Solutions Partner",
-  },
-];
 
 export const pricingFeatures = [
   "White-labelled estate planning website",
