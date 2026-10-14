@@ -5,7 +5,6 @@ import { Users, TrendingUp, Landmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
 import { PricingCard } from "@/components/PricingCard";
-import { TestimonialCard } from "@/components/TestimonialCard";
 import { CTABanner } from "@/components/CTABanner";
 import {
   homeSteps,
@@ -13,7 +12,6 @@ import {
   modules,
   pricingFeatures,
   stats,
-  testimonials,
   trustBar,
 } from "@/lib/content";
 import { pricing, site } from "@/lib/env";
@@ -334,31 +332,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Proof */}
+      {/* Stats */}
       <section className="section">
-        <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-          <FadeIn>
-            <div className="grid grid-cols-3 gap-6 sm:gap-10">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <p className="font-mono text-3xl font-medium text-primary sm:text-4xl">
-                    {s.value}
-                  </p>
-                  <p className="mt-2 text-xs leading-snug text-ink-muted sm:text-sm">
-                    {s.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <div className="grid gap-6">
-              {testimonials.map((t) => (
-                <TestimonialCard key={t.name} {...t} />
-              ))}
-            </div>
-          </FadeIn>
-        </div>
+        <FadeIn>
+          <div className="mx-auto grid max-w-2xl grid-cols-3 gap-6 text-center sm:gap-10">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <p className="font-mono text-3xl font-medium text-primary sm:text-4xl">
+                  {s.value}
+                </p>
+                <p className="mt-2 text-xs leading-snug text-ink-muted sm:text-sm">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
       </section>
 
       <CTABanner title="Ready to add estate planning to your business?" />
