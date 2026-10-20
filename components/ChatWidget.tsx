@@ -2,11 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Sparkles, X, Send } from "lucide-react";
+import { Sparkles, X, Send, MessageCircle } from "lucide-react";
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
 const STORAGE_KEY = "spark-solutions-chat-v1";
+const TEASER_DISMISSED_KEY = "spark-solutions-chat-teaser-dismissed";
+const TEASER_TEXT = "👋 Got a question about Spark Solutions? Ask me anything.";
 const GREETING =
   "Hi, I'm the Spark Solutions assistant. Ask me about the platform, pricing, or whether it's a fit for your business.";
 const STARTER_SUGGESTIONS = [
@@ -56,6 +58,8 @@ export function ChatWidget() {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [leadNotice, setLeadNotice] = useState(false);
+  const [showTeaser, setShowTeaser] = useState(false);
+  const [pulse, setPulse] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -67,6 +71,41 @@ export function ChatWidget() {
       // ignore corrupt/unavailable storage
     }
   }, []);
+
+  // A brief proactive nudge, once per session, so the launcher isn't easy
+  // to miss on first visit — never on a return visit that already has a
+  // conversation, and only once someone hasn't dismissed or opened it.
+  useEffect(() => {
+    let dismissed = false;
+    let hasHistory = false;
+    try {
+      dismissed = sessionStorage.getItem(TEASER_DISMISSED_KEY) === "1";
+      hasHistory = !!sessionStorage.getItem(STORAGE_KEY);
+    } catch {
+      // ignore storage read failures
+    }
+    if (dismissed || hasHistory) {
+      setPulse(false);
+      return;
+    }
+    const showAt = setTimeout(() => setShowTeaser(true), 3000);
+    const hideAt = setTimeout(() => setShowTeaser(false), 15000);
+    const stopPulse = setTimeout(() => setPulse(false), 8000);
+    return () => {
+      clearTimeout(showAt);
+      clearTimeout(hideAt);
+      clearTimeout(stopPulse);
+    };
+  }, []);
+
+  function dismissTeaser() {
+    setShowTeaser(false);
+    try {
+      sessionStorage.setItem(TEASER_DISMISSED_KEY, "1");
+    } catch {
+      // ignore storage write failures
+    }
+  }
 
   useEffect(() => {
     try {
@@ -128,15 +167,46 @@ export function ChatWidget() {
     }
   }
 
+  function toggleOpen() {
+    setOpen((v) => !v);
+    setShowTeaser(false);
+    setPulse(false);
+    try {
+      sessionStorage.setItem(TEASER_DISMISSED_KEY, "1");
+    } catch {
+      // ignore storage write failures
+    }
+  }
+
   return (
     <>
+      {showTeaser && !open && (
+        <div className="fixed bottom-24 right-6 z-50 w-64 max-w-[calc(100vw-2rem)] rounded-lg border border-border bg-white p-3.5 pr-7 text-sm leading-relaxed text-ink-body shadow-[0_16px_32px_-12px_rgba(15,23,42,0.25)]">
+          <button
+            type="button"
+            onClick={dismissTeaser}
+            aria-label="Dismiss"
+            className="absolute right-2 top-2 rounded p-1 text-ink-muted hover:bg-surface hover:text-ink"
+          >
+            <X className="h-3.5 w-3.5" />
+          </button>
+          <button type="button" onClick={toggleOpen} className="text-left">
+            {TEASER_TEXT}
+          </button>
+        </div>
+      )}
+
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={toggleOpen}
         aria-label={open ? "Close the Spark Solutions assistant" : "Open the Spark Solutions assistant"}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-[0_12px_24px_-8px_rgba(29,78,216,0.5)] transition hover:-translate-y-0.5 hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        className="fixed bottom-6 right-6 z-50 flex h-14 items-center gap-2 rounded-full bg-primary pl-4 pr-5 text-white shadow-[0_12px_24px_-8px_rgba(29,78,216,0.5)] transition hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_16px_32px_-8px_rgba(29,78,216,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary relative"
       >
-        {open ? <X className="h-6 w-6" /> : <Sparkles className="h-6 w-6" />}
+        {pulse && !open && (
+          <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-primary/60" />
+        )}
+        {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
+        <span className="font-heading text-sm font-semibold">{open ? "Close" : "Chat with us"}</span>
       </button>
 
       {open && (
