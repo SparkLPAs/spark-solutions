@@ -9,7 +9,7 @@ type ChatMessage = { role: "user" | "assistant"; content: string };
 const ASSISTANT_NAME = "Spark Solutions Assistant";
 const STORAGE_KEY = "spark-solutions-chat-v1";
 const TEASER_DISMISSED_KEY = "spark-solutions-chat-teaser-dismissed";
-const TEASER_TEXT = "👋 Got a question about Spark Solutions? Ask me anything.";
+const TEASER_TEXT = `👋 I'm the ${ASSISTANT_NAME}. Got a question? Ask me anything.`;
 const GREETING =
   "Hi, I'm the Spark Solutions Assistant. Ask me about the platform, pricing, or whether it's a fit for your business.";
 const STARTER_SUGGESTIONS = [
