@@ -88,18 +88,16 @@ export function ChatWidget() {
       setPulse(false);
       return;
     }
+    // Stays up until someone actually notices it — dismissed or opened —
+    // rather than auto-hiding on a timer, which reads as the assistant
+    // having vanished rather than as a deliberate close.
     const showAt = setTimeout(() => setShowTeaser(true), 3000);
-    const hideAt = setTimeout(() => setShowTeaser(false), 15000);
-    const stopPulse = setTimeout(() => setPulse(false), 8000);
-    return () => {
-      clearTimeout(showAt);
-      clearTimeout(hideAt);
-      clearTimeout(stopPulse);
-    };
+    return () => clearTimeout(showAt);
   }, []);
 
   function dismissTeaser() {
     setShowTeaser(false);
+    setPulse(false);
     try {
       sessionStorage.setItem(TEASER_DISMISSED_KEY, "1");
     } catch {
@@ -206,7 +204,7 @@ export function ChatWidget() {
           <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-primary/60" />
         )}
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
-        <span className="font-heading text-sm font-semibold">{open ? "Close" : "Chat with us"}</span>
+        <span className="font-heading text-sm font-semibold">{open ? "Close" : "AI Assistant"}</span>
       </button>
 
       {open && (
