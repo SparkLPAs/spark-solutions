@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, Inter, DM_Mono } from "next/font/google";
 
 import "./globals.css";
@@ -31,6 +31,15 @@ const dmMono = DM_Mono({
   variable: "--font-dm-mono",
   display: "swap",
 });
+
+// viewportFit "cover" is required for env(safe-area-inset-bottom) to report
+// Safari's toolbar height — without it the ChatWidget launcher can end up
+// positioned underneath Safari's bottom toolbar instead of above it.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
