@@ -187,7 +187,7 @@ export function ChatWidget() {
   return (
     <>
       {showTeaser && !open && (
-        <div className="fixed bottom-[calc(6rem+env(safe-area-inset-bottom))] right-6 z-50 w-64 max-w-[calc(100vw-2rem)] rounded-lg border border-border bg-white p-3.5 pr-7 text-sm leading-relaxed text-ink-body shadow-[0_16px_32px_-12px_rgba(15,23,42,0.25)]">
+        <div className="fixed bottom-[calc(6rem_+_env(safe-area-inset-bottom))] right-6 z-50 w-64 max-w-[calc(100vw-2rem)] rounded-lg border border-border bg-white p-3.5 pr-7 text-sm leading-relaxed text-ink-body shadow-[0_16px_32px_-12px_rgba(15,23,42,0.25)]">
           <button
             type="button"
             onClick={dismissTeaser}
@@ -206,7 +206,7 @@ export function ChatWidget() {
         type="button"
         onClick={toggleOpen}
         aria-label={open ? `Close the ${ASSISTANT_NAME}` : `Open the ${ASSISTANT_NAME}`}
-        className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-6 z-50 flex h-14 items-center gap-2 whitespace-nowrap rounded-full bg-primary pl-4 pr-5 text-white shadow-[0_12px_24px_-8px_rgba(29,78,216,0.5)] transition hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_16px_32px_-8px_rgba(29,78,216,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary relative"
+        className="fixed bottom-[calc(1.5rem_+_env(safe-area-inset-bottom))] right-6 z-50 flex h-14 items-center gap-2 whitespace-nowrap rounded-full bg-primary pl-4 pr-5 text-white shadow-[0_12px_24px_-8px_rgba(29,78,216,0.5)] transition hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_16px_32px_-8px_rgba(29,78,216,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary relative"
       >
         {!open && <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-primary/60" />}
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
@@ -217,7 +217,7 @@ export function ChatWidget() {
         <div
           role="dialog"
           aria-label={ASSISTANT_NAME}
-          className="fixed bottom-[calc(6rem+env(safe-area-inset-bottom))] right-6 z-50 flex h-[min(600px,75vh)] w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-lg border border-border bg-white shadow-[0_24px_48px_-12px_rgba(15,23,42,0.25)]"
+          className="fixed bottom-[calc(6rem_+_env(safe-area-inset-bottom))] right-6 z-50 flex h-[min(600px,75vh)] w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-lg border border-border bg-white shadow-[0_24px_48px_-12px_rgba(15,23,42,0.25)]"
         >
           <div className="flex items-center gap-3 rounded-t-lg bg-primary-dark px-4 py-3.5 text-white">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-primary-dark">
