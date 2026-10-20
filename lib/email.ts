@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 
 import type { DemoRequestInput } from "@/lib/validations";
+import type { WriteReportToolOutput } from "@/lib/ai/assess";
 
 function getResend() {
   const apiKey = process.env.RESEND_API_KEY;
@@ -46,4 +47,46 @@ export async function sendDemoRequestEmails(data: DemoRequestInput) {
       `,
     }),
   ]);
+}
+
+// Only sent when a visitor ticks the consent box on the readiness-check
+// result (app/api/assess) — unlike the demo form, there's no "we'll be in
+// touch" promise here, just the report itself for their own reference.
+export async function sendAssessmentReportEmail(
+  to: string,
+  firstName: string | undefined,
+  report: WriteReportToolOutput
+) {
+  const resend = getResend();
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://spark-solutions.co.uk";
+  const greeting = firstName ? `Hi ${firstName},` : "Hi,";
+
+  await resend.emails.send({
+    from: fromAddress(),
+    to,
+    subject: "Your Spark Solutions readiness check result",
+    html: `
+      <p>${greeting}</p>
+      <p>Here's a copy of your readiness check result from spark-solutions.co.uk.</p>
+      <h2>${report.headline}</h2>
+      <p>${report.summary}</p>
+      <h3>Why it fits</h3>
+      <ul>${report.fit_points.map((p) => `<li>${p}</li>`).join("")}</ul>
+      ${
+        report.watch_outs.length
+          ? `<h3>Worth raising with the team</h3><ul>${report.watch_outs
+              .map((p) => `<li>${p}</li>`)
+              .join("")}</ul>`
+          : ""
+      }
+      <h3>Recommended next step</h3>
+      <p>${report.recommended_path}</p>
+      <p>${report.closing}</p>
+      <p>
+        <a href="${siteUrl}/demo">Book a demo</a> or
+        <a href="${siteUrl}/pricing">see full pricing</a>.
+      </p>
+      <p>Speak soon,<br />The Spark Solutions team</p>
+    `,
+  });
 }
