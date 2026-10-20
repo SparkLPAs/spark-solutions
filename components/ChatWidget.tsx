@@ -59,7 +59,6 @@ export function ChatWidget() {
   const [busy, setBusy] = useState(false);
   const [leadNotice, setLeadNotice] = useState(false);
   const [showTeaser, setShowTeaser] = useState(false);
-  const [pulse, setPulse] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -72,9 +71,12 @@ export function ChatWidget() {
     }
   }, []);
 
-  // A brief proactive nudge, once per session, so the launcher isn't easy
-  // to miss on first visit — never on a return visit that already has a
-  // conversation, and only once someone hasn't dismissed or opened it.
+  // A one-time proactive nudge bubble, so the launcher isn't easy to miss
+  // on first visit — never on a return visit that already has a
+  // conversation, and only once someone hasn't already dismissed or opened
+  // it. The pulsing glow on the launcher itself (below) is separate and
+  // permanent — it never turns off, so the button stays easy to spot even
+  // after this one-time nudge has been dismissed.
   useEffect(() => {
     let dismissed = false;
     let hasHistory = false;
@@ -84,10 +86,7 @@ export function ChatWidget() {
     } catch {
       // ignore storage read failures
     }
-    if (dismissed || hasHistory) {
-      setPulse(false);
-      return;
-    }
+    if (dismissed || hasHistory) return;
     // Stays up until someone actually notices it — dismissed or opened —
     // rather than auto-hiding on a timer, which reads as the assistant
     // having vanished rather than as a deliberate close.
@@ -97,7 +96,6 @@ export function ChatWidget() {
 
   function dismissTeaser() {
     setShowTeaser(false);
-    setPulse(false);
     try {
       sessionStorage.setItem(TEASER_DISMISSED_KEY, "1");
     } catch {
@@ -168,7 +166,6 @@ export function ChatWidget() {
   function toggleOpen() {
     setOpen((v) => !v);
     setShowTeaser(false);
-    setPulse(false);
     try {
       sessionStorage.setItem(TEASER_DISMISSED_KEY, "1");
     } catch {
@@ -200,9 +197,7 @@ export function ChatWidget() {
         aria-label={open ? "Close the Spark Solutions assistant" : "Open the Spark Solutions assistant"}
         className="fixed bottom-6 right-6 z-50 flex h-14 items-center gap-2 rounded-full bg-primary pl-4 pr-5 text-white shadow-[0_12px_24px_-8px_rgba(29,78,216,0.5)] transition hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_16px_32px_-8px_rgba(29,78,216,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary relative"
       >
-        {pulse && !open && (
-          <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-primary/60" />
-        )}
+        {!open && <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-primary/60" />}
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
         <span className="font-heading text-sm font-semibold">{open ? "Close" : "AI Assistant"}</span>
       </button>
