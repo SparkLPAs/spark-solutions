@@ -50,3 +50,42 @@ export function submitDemoToCrm(data: DemoRequestInput): Promise<CrmResult> {
       .join("\n"),
   });
 }
+
+// Leads captured mid-conversation by the chat widget (app/api/chat) — far
+// less structured than the demo form (no phone, business is optional,
+// often just a name + email + one-line reason), so this intentionally
+// doesn't reuse DemoRequestInput.
+export function submitChatLeadToCrm(data: {
+  name?: string;
+  email: string;
+  business?: string;
+  reason?: string;
+}): Promise<CrmResult> {
+  return postLead({
+    name: data.name || "Not given",
+    company: data.business || "Not given",
+    email: data.email,
+    phone: "",
+    source: "Spark Solutions AI assistant",
+    message: data.reason || "Captured mid-conversation by the chat widget.",
+  });
+}
+
+// Leads captured at the end of the "is this right for my practice?"
+// readiness check (app/api/assess), once a visitor has opted in to be
+// contacted about their result.
+export function submitAssessLeadToCrm(data: {
+  name?: string;
+  email: string;
+  tier: string;
+  businessDescription?: string;
+}): Promise<CrmResult> {
+  return postLead({
+    name: data.name || "Not given",
+    company: data.businessDescription || "Not given",
+    email: data.email,
+    phone: "",
+    source: "Spark Solutions readiness check",
+    message: `Readiness result: ${data.tier}`,
+  });
+}

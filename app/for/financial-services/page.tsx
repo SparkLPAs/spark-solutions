@@ -7,6 +7,7 @@ import { PageHero } from "@/components/PageHero";
 import { FadeIn } from "@/components/FadeIn";
 import { FeatureCard } from "@/components/FeatureCard";
 import { CTABanner } from "@/components/CTABanner";
+import { ReadinessQuiz } from "@/components/ReadinessQuiz";
 import { businessTypeLabels } from "@/lib/content";
 import { site } from "@/lib/env";
 
@@ -175,6 +176,23 @@ export default function FinancialServicesPage() {
             </Link>
           </FadeIn>
         </div>
+      </section>
+
+      {/* Readiness check */}
+      <section className="section">
+        <FadeIn>
+          <p className="eyebrow text-center">Free readiness check</p>
+          <h2 className="mt-3 text-center font-heading text-3xl font-bold text-ink sm:text-4xl">
+            Is Spark Solutions right for your practice?
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-ink-body">
+            Answer seven quick questions for an instant result, then get an AI-written
+            recommendation tailored to your business — about two minutes, no obligation.
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.1} className="mt-12">
+          <ReadinessQuiz />
+        </FadeIn>
       </section>
 
       <CTABanner title="Ready to add estate planning to your business?" />

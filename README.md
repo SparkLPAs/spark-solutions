@@ -45,24 +45,51 @@ See `.env.example` for the full list. At minimum, set:
 ```
 app/                    Route segments (App Router)
   page.tsx              Home (10 sections per build brief)
-  for/financial-services, for/will-writers
+  for/financial-services, for/will-writers  — each embeds <ReadinessQuiz />
   how-it-works, partners, pricing, features, about
   demo/                 Demo request page + form
   api/demo/route.ts     Resend email handler for demo requests
+  api/chat/route.ts     Chat widget backend (Claude, tool-forced JSON reply)
+  api/assess/route.ts   Readiness-check report backend (Claude)
   blog/                 Blog index + [slug] detail page (Contentlayer)
   reviews/page.tsx      Reviews page (Contentlayer)
   legal/privacy, legal/terms
   sitemap.ts, robots.ts
 components/             Nav, Footer, Hero, FeatureCard, PricingCard,
                         TestimonialCard, CTABanner, BlogCard, ReviewCard,
-                        DemoForm, analytics/*, ui/* (shadcn-style primitives)
+                        DemoForm, ChatWidget (site-wide AI assistant),
+                        ReadinessQuiz ("is this right for my practice?"),
+                        analytics/*, ui/* (shadcn-style primitives)
 content/blog/*.mdx      5 seed blog articles
 content/reviews/*.mdx   Real partner reviews — empty until real ones are
                         added; see "Adding a real review" below.
 lib/                    env.ts (site + pricing config), content.ts (shared
                         copy), validations.ts (Zod schemas), email.ts
-                        (Resend), utils.ts, analytics-events.ts
+                        (Resend), utils.ts, analytics-events.ts, crm.ts,
+                        spam-check.ts, rate-limit.ts (in-memory, per-IP —
+                        see its own comment for the known limitation)
+lib/ai/                 client.ts (Anthropic client), chat.ts / assess.ts
+                        (system prompts + tool schemas — grounded in
+                        lib/content.ts + lib/env.ts at request time, never
+                        hard-coded facts)
 ```
+
+## AI assistant & readiness check
+
+Two AI-powered features, both backed by the Claude API server-side (`ANTHROPIC_API_KEY`
+in `.env.example`) and both grounded in this repo's own content/pricing — never general
+knowledge — so they can't drift out of sync with the real site:
+
+- **Chat widget** (`components/ChatWidget.tsx` → `app/api/chat/route.ts`) — a floating
+  assistant on every page, answering partner questions about the platform and handing off
+  qualified leads into the existing CRM pipeline (`lib/crm.ts`).
+- **Readiness check** (`components/ReadinessQuiz.tsx` → `app/api/assess/route.ts`) — a
+  7-question quiz on `/for/financial-services` and `/for/will-writers` that ends in an
+  AI-written, personalised recommendation, with an optional emailed copy.
+
+Both endpoints are public and unauthenticated, so both are rate-limited per IP
+(`lib/rate-limit.ts`) — see that file's comment for the limiter's known limitations and
+what the real next step is if abuse proves more sophisticated than it protects against.
 
 ## Adding a real review
 

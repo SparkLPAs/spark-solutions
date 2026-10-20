@@ -10,6 +10,7 @@ import {
 } from "@/components/analytics/GoogleTagManager";
 import { MetaPixel } from "@/components/analytics/MetaPixel";
 import { Clarity } from "@/components/analytics/Clarity";
+import { ChatWidget } from "@/components/ChatWidget";
 import { site } from "@/lib/env";
 
 const syne = Syne({
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main>{children}</main>
         <Footer />
+        <ChatWidget />
         <MetaPixel />
         <Clarity />
       </body>
