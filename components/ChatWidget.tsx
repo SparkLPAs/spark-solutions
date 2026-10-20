@@ -6,11 +6,12 @@ import { Sparkles, X, Send, MessageCircle } from "lucide-react";
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
+const ASSISTANT_NAME = "Spark Solutions Assistant";
 const STORAGE_KEY = "spark-solutions-chat-v1";
 const TEASER_DISMISSED_KEY = "spark-solutions-chat-teaser-dismissed";
 const TEASER_TEXT = "👋 Got a question about Spark Solutions? Ask me anything.";
 const GREETING =
-  "Hi, I'm the Spark Solutions assistant. Ask me about the platform, pricing, or whether it's a fit for your business.";
+  "Hi, I'm the Spark Solutions Assistant. Ask me about the platform, pricing, or whether it's a fit for your business.";
 const STARTER_SUGGESTIONS = [
   "What's included in the platform?",
   "How does pricing work?",
@@ -124,7 +125,17 @@ export function ChatWidget() {
   }, []);
 
   useEffect(() => {
-    if (open) setTimeout(() => inputRef.current?.focus(), 50);
+    if (open) {
+      setTimeout(() => inputRef.current?.focus(), 50);
+      return;
+    }
+    // iOS Safari/Chrome can leave fixed-position elements (this launcher)
+    // mispositioned off-screen after the on-screen keyboard closes — a
+    // known quirk, not specific to this widget. Blurring the input first
+    // lets the keyboard fully dismiss, then nudging layout with a no-op
+    // scroll forces the browser to recalculate fixed positioning.
+    inputRef.current?.blur();
+    requestAnimationFrame(() => window.scrollTo(window.scrollX, window.scrollY));
   }, [open]);
 
   async function send(text: string) {
@@ -194,18 +205,18 @@ export function ChatWidget() {
       <button
         type="button"
         onClick={toggleOpen}
-        aria-label={open ? "Close the Spark Solutions assistant" : "Open the Spark Solutions assistant"}
-        className="fixed bottom-6 right-6 z-50 flex h-14 items-center gap-2 rounded-full bg-primary pl-4 pr-5 text-white shadow-[0_12px_24px_-8px_rgba(29,78,216,0.5)] transition hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_16px_32px_-8px_rgba(29,78,216,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary relative"
+        aria-label={open ? `Close the ${ASSISTANT_NAME}` : `Open the ${ASSISTANT_NAME}`}
+        className="fixed bottom-6 right-6 z-50 flex h-14 items-center gap-2 whitespace-nowrap rounded-full bg-primary pl-4 pr-5 text-white shadow-[0_12px_24px_-8px_rgba(29,78,216,0.5)] transition hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_16px_32px_-8px_rgba(29,78,216,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary relative"
       >
         {!open && <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-primary/60" />}
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
-        <span className="font-heading text-sm font-semibold">{open ? "Close" : "AI Assistant"}</span>
+        <span className="font-heading text-sm font-semibold">{open ? "Close" : ASSISTANT_NAME}</span>
       </button>
 
       {open && (
         <div
           role="dialog"
-          aria-label="Spark Solutions assistant"
+          aria-label={ASSISTANT_NAME}
           className="fixed bottom-24 right-6 z-50 flex h-[min(600px,75vh)] w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-lg border border-border bg-white shadow-[0_24px_48px_-12px_rgba(15,23,42,0.25)]"
         >
           <div className="flex items-center gap-3 rounded-t-lg bg-primary-dark px-4 py-3.5 text-white">
@@ -213,7 +224,7 @@ export function ChatWidget() {
               <Sparkles className="h-4.5 w-4.5" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="font-heading text-sm font-semibold">Spark Solutions assistant</p>
+              <p className="font-heading text-sm font-semibold">{ASSISTANT_NAME}</p>
               <p className="flex items-center gap-1.5 text-xs text-white/70">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 AI assistant · replies in seconds
