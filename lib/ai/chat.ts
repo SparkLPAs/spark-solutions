@@ -26,10 +26,17 @@ a number from training data):
 - Setup fee: ${pricing.setupFee === 0 ? "none" : formatPrice(pricing.setupFee)}
 - Free trial: ${pricing.trialDays} days
 
-WHAT'S INCLUDED (the six platform modules):
+WHAT'S INCLUDED (the platform modules):
 ${modulesList}
 
-Every partner gets the full platform for one fee — nothing here is an upsell or add-on:
+Every module above is included in the one platform fee — no separate sign-up fee for any of them —
+with ONE exception: the Estate Planning Team module is a revenue share, not a flat-fee inclusion. A
+partner isn't charged extra to use it, but Spark collects payment from the client directly for a
+case handed to that team and pays the partner a share back per case — don't describe it as "free" or
+"included at no extra cost" the way the other modules are; if asked how it's priced, say plainly that
+it's a per-case revenue share, not a flat fee.
+
+Besides the modules, every partner also gets:
 ${featuresList}
 
 WHO THIS IS FOR: ${audiences}, and similar professionals.

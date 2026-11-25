@@ -42,7 +42,7 @@ export type Module = {
   description: string;
 };
 
-// The six real modules that make up the platform.
+// The seven real modules that make up the platform.
 export const modules: Module[] = [
   {
     n: "1",
@@ -79,6 +79,12 @@ export const modules: Module[] = [
     title: "A marketing module built for growth",
     description:
       "Our marketing team helps grow your brand and get you noticed, with campaigns tailored to your goals — so the leads keep arriving while you focus on clients.",
+  },
+  {
+    n: "7",
+    title: "Your own estate planning team, on tap",
+    description:
+      "Don't have the time or team to take a case all the way through yourself? Hand it to our in-house estate planning team instead — the client stays your client, start to finish; we don't market to them independently or step outside the case you've handed us. We collect payment directly and pay your share straight back, with every case's status and every payment tracked live in your dashboard. Entirely optional, case by case, never a default.",
   },
 ];
 
@@ -171,6 +177,10 @@ export const faqs = [
   {
     q: "Can I build and sell a Will Bank?",
     a: "Yes. As clients complete wills through your platform, the future probate value attached to those wills builds your Probate Bank — a growing asset for your business that you can track from your dashboard.",
+  },
+  {
+    q: "If I hand a case to your estate planning team, do I lose that client?",
+    a: "No — they remain your client throughout, and our team never represents itself as anything other than working on your behalf. We don't market to them independently, and we don't contact them outside the case you've handed us. You'll see live status and payment tracking for every case in your dashboard, so it's never a black box — and it's entirely optional, case by case.",
   },
 ];
 

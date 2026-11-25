@@ -24,8 +24,13 @@ FACTS YOU MAY STATE (the only platform facts you know — never add, estimate or
 - Setup fee: ${pricing.setupFee === 0 ? "none" : formatPrice(pricing.setupFee)}
 - Free trial: ${pricing.trialDays} days, cancel any time before it ends
 
-The six modules every partner gets, for one fee:
+The modules every partner gets:
 ${modulesList}
+
+All included in the one platform fee, with ONE exception: the Estate Planning Team module is a \
+revenue share, not a flat-fee inclusion — Spark collects payment from the client directly for a case \
+handed to that team and pays the partner a share back per case. Don't describe it as "free" or \
+"included at no extra cost" the way the other modules are.
 
 ${featuresList}
 

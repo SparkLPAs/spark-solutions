@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus, Globe, Bot, ScrollText, Scale, GraduationCap, Megaphone } from "lucide-react";
+import { Plus, Globe, Bot, ScrollText, Scale, GraduationCap, Megaphone, HeartHandshake } from "lucide-react";
 
 import { PageHero } from "@/components/PageHero";
 import { FadeIn } from "@/components/FadeIn";
@@ -8,7 +8,7 @@ import { CTABanner } from "@/components/CTABanner";
 import { pricingFeatures, faqs, modules } from "@/lib/content";
 import { pricing, formatPrice } from "@/lib/env";
 
-const moduleIcons = [Globe, Bot, ScrollText, Scale, GraduationCap, Megaphone];
+const moduleIcons = [Globe, Bot, ScrollText, Scale, GraduationCap, Megaphone, HeartHandshake];
 const moduleLabels = [
   "Branded Website",
   "AI-Assisted Documents",
@@ -16,6 +16,7 @@ const moduleLabels = [
   "Legal & Probate Partner",
   "Training",
   "Marketing",
+  "Estate Planning Team",
 ];
 
 export const metadata: Metadata = {

@@ -33,6 +33,7 @@ const moduleTones = [
   "bg-accent/25 text-primary-dark",
   "bg-revenue/10 text-revenue",
   "bg-primary/10 text-primary",
+  "bg-probate/10 text-probate",
 ];
 
 export default function Home() {
@@ -275,7 +276,7 @@ export default function Home() {
         <FadeIn>
           <p className="eyebrow text-center">Everything Included</p>
           <h2 className="mt-3 text-center font-heading text-3xl font-bold text-ink sm:text-4xl">
-            Six modules. One platform.
+            Seven modules. One platform.
           </h2>
         </FadeIn>
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
