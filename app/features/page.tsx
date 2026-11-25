@@ -8,6 +8,7 @@ import {
   Megaphone,
   LayoutDashboard,
   CreditCard,
+  HeartHandshake,
 } from "lucide-react";
 
 import { PageHero } from "@/components/PageHero";
@@ -18,7 +19,7 @@ import { CTABanner } from "@/components/CTABanner";
 export const metadata: Metadata = {
   title: "Features — Everything You Need to Add Estate Planning to Your Business",
   description:
-    "Every module included with Spark Solutions: a white-labelled website, AI-assisted document generation, Online Wills, a legal & probate partner, training, marketing, an estate planning hub and direct Stripe payments.",
+    "Every module included with Spark Solutions: a white-labelled website, AI-assisted document generation, Online Wills, a legal & probate partner, training, marketing, an estate planning team, an estate planning hub and direct Stripe payments.",
   alternates: { canonical: "/features" },
 };
 
@@ -64,6 +65,13 @@ const features = [
     description:
       "Our marketing team helps grow your brand and get you noticed, with campaigns tailored to your goals. Manage campaigns directly from your dashboard, so the leads keep arriving while you focus on clients.",
     tone: "blue",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Your Own Estate Planning Team",
+    description:
+      "Don't have the time or team to take a case all the way through yourself? Hand it to our in-house estate planning team instead — the client stays your client, start to finish; we don't market to them independently or step outside the case you've handed us. We collect payment directly and pay your share straight back, with every case's status and every payment tracked live in your dashboard. Entirely optional, case by case, never a default.",
+    tone: "mint",
   },
   {
     icon: LayoutDashboard,
