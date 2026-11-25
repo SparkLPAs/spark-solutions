@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     url: site.url,
     title: `${site.name} — White-Label Estate Planning Platform for Financial Services`,
     description:
-      "Turn your client relationships into estate planning revenue with a fully branded platform, six modules, and a Probate Bank that grows with every will you write.",
+      "Turn your client relationships into estate planning revenue with a fully branded platform, every module you need, and a Probate Bank that grows with every will you write.",
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — White-Label Estate Planning Platform`,
     description:
-      "Turn your client relationships into estate planning revenue with a fully branded platform, six modules, and a Probate Bank that grows with every will you write.",
+      "Turn your client relationships into estate planning revenue with a fully branded platform, every module you need, and a Probate Bank that grows with every will you write.",
   },
   robots: { index: true, follow: true },
 };

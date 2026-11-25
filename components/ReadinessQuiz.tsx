@@ -79,7 +79,7 @@ const QUESTIONS: Question[] = [
 const PRIORITY_COPY: Record<string, { title: string; body: string }> = {
   "Low cost, simple pricing": {
     title: "Simple, single-fee pricing",
-    body: "One monthly fee covers all six modules — no add-ons to negotiate.",
+    body: "One monthly fee covers every platform module — no add-ons to negotiate. (The one exception is the Estate Planning Team, a per-case revenue share rather than a flat fee.)",
   },
   "Keeping my own brand": {
     title: "Fully white-labelled",
